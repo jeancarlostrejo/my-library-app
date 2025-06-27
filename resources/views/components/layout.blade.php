@@ -7,10 +7,6 @@
 
     <title>Mi Biblioteca - {{ $title }} </title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-
     <link rel="shortcut icon" href="{{ asset('images/lectura.png') }}" type="image/x-icon">
 
     @if (Route::is('welcome'))
@@ -28,7 +24,7 @@
 </head>
 
 <body
-    class="flex flex-col items-center min-h-screen bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans {{ Route::is('welcome') ? 'fondo' : '' }}">
+    class="flex flex-col items-center min-h-screen bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans {{ Route::is('welcome') ? 'fondo' : '' }} {{ Route::is('readings.current_reading') ? ' px-4 md:px-8 lg:px-16' : '' }}">
 
     <nav class="bg-gray-100 dark:bg-gray-800 shadow-md w-full fixed top-0 inset-x-0 z-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,8 +38,8 @@
                 </div>
 
                 <div class="hidden md:flex md:items-center md:ml-6 space-x-4">
-                    <a href="current-reading.html"
-                        class="text-gray-700 dark:text-gray-200 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">¿Qué
+                    <a href="{{ route('readings.current_reading') }}"
+                        class="text-gray-700 dark:text-gray-200 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 {{ Route::is('readings.current_reading') ? 'bg-blue-600' : '' }}">¿Qué
                         libro estoy leyendo?</a>
                     <a href="#"
                         class="text-gray-700 dark:text-gray-200 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Próximas
@@ -92,11 +88,11 @@
         <div class="overlay absolute inset-0 z-0"></div>
     @endif
 
-    <main>
-        {{ $slot }}
-    </main>
+    @if (Route::is('readings.current_reading'))
+        <div class="pt-16 w-full flex-grow"></div>
+    @endif
 
-    </div>
+    {{ $slot }}
 
     <footer class="w-full py-4 z-10 text-center text-gray-200 dark:text-gray-400 text-xl animate-slide-in-up">
         Hecho con <span class="text-red-500 text-lg">&hearts;</span> por
