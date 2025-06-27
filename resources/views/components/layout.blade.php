@@ -49,7 +49,7 @@
                     </x-nav-link>
 
                     <x-nav-link>
-                        Próximas lecturas
+                        Libros leídos
                     </x-nav-link>
                 </div>
 
@@ -85,19 +85,11 @@
                 </x-nav-mobile-link>
 
                 <x-nav-mobile-link>
-                    Próximas lecturas
+                    Libros leídos
                 </x-nav-mobile-link>
             </div>
         </div>
     </nav>
-
-    @if (Route::is('welcome'))
-        <div class="overlay absolute inset-0 z-0"></div>
-    @endif
-
-    @if (Route::is('readings.current_reading'))
-        <div class="pt-16 w-full flex-grow"></div>
-    @endif
 
     {{ $slot }}
 

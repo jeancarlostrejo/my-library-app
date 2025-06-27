@@ -1,5 +1,7 @@
 <x-layout>
     <x-slot name="title">Inicio</x-slot>
+    <div class="overlay absolute inset-0 z-0"></div>
+
     <div class="main-content-wrapper relative z-10 mt-20">
         <header class="text-center px-4 max-w-4xl mx-auto animate-fade-in-scale">
             <h1

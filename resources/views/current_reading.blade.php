@@ -1,6 +1,8 @@
 <x-layout>
     <x-slot name="title">{{ __('Current Reading') }}</x-slot>
 
+    <div class="pt-16 w-full flex-grow"></div>
+
     <main>
         <section id="main-book-info-container"
             class="flex flex-col items-center justify-center w-full min-h-screen pt-4 pb-8">
