@@ -30,7 +30,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="text-xl font-bold text-blue-500 dark:text-gray-200 flex items-center">
+                    <a href="{{ route('welcome') }}" class="text-xl font-bold text-blue-500 dark:text-gray-200 flex items-center">
                         <img src="{{ asset('images/lectura.png') }}" alt="Logo Mi Biblioteca" class="h-11 w-11 mr-2"
                             style="height: 44px; width: 44px" />
                         Mi Biblioteca
@@ -69,10 +69,11 @@
             </div>
         </div>
 
+        <!-- Navbar mobile -->
         <div class="md:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="current-reading.html"
-                    class="text-gray-700 dark:text-gray-200 hover:bg-blue-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">¿Qué
+                <a href="{{ route('readings.current_reading') }}"
+                    class="text-gray-700 dark:text-gray-200 hover:bg-blue-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 {{ Route::is('readings.current_reading') ? 'bg-blue-600' : '' }}">¿Qué
                     libro estoy leyendo?</a>
                 <a href="#"
                     class="text-gray-700 dark:text-gray-200 hover:bg-blue-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Próximas
