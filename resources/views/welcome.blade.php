@@ -3,9 +3,9 @@
     <div class="fixed inset-0 bg-black/50 z-1"></div>
 
     <div class="w-full flex flex-col justify-center p-8 relative z-10 mt-16 gap-4">
-        <header class="text-center w-full px-4 max-w-4xl mx-auto animate-fade-in-scale">
+        <header class="text-center w-full px-4 max-w-4xl mx-auto animate-blurred-fade-in">
             <h1
-                class="text-4xl sm:text-6xl font-extrabold text-blue-500 dark:text-gray-200 mb-6 leading-tight drop-shadow-lg">
+                class="text-4xl sm:text-6xl font-extrabold text-blue-500 dark:text-gray-200 mb-6 leading-tight drop-shadow-lg ">
                 📚 Mi biblioteca 📚
             </h1>
             <p class="text-2xl sm:text-3xl text-white dark:text-gray-200 font-light leading-relaxed">
@@ -14,7 +14,7 @@
         </header>
 
         <div
-            class="bg-gray-100/90 dark:bg-gray-800/80 p-8 md:p-10 rounded-lg shadow-2xl max-w-3xl mx-auto text-center animate-slide-in-right transform transition-all duration-500 hover:scale-102">
+            class="bg-gray-100/90 dark:bg-gray-800/80 p-8 md:p-10 rounded-lg shadow-2xl max-w-3xl mx-auto text-center animate-fade-in animate-duration-1000 animate-delay-[1250ms] hover:scale-102 duration-300">
             <h2 class="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-gray-200 mb-6">
                 ¿Qué encontrarás aquí?
             </h2>
