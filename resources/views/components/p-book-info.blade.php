@@ -2,8 +2,7 @@
 
 <p
     {{ $attributes->merge([
-        'class' => 'text-base text-gray-600 dark:text-gray-300 mb-2 text-left flex items-center gap-2',
+        'class' => 'text-base text-gray-600 dark:text-gray-300 mb-2 text-center md:text-left flex flex-col md:flex-row items-center gap-2',
     ]) }}>
-    <span class="text-lg">{{ $emoji }}</span>
-    <span class="font-semibold">{{ $label }}:</span> {{ $value }}
+    <span class="font-semibold">{{ $emoji }} {{ $label }}:</span> <span>{{ $value }}</span>
 </p>

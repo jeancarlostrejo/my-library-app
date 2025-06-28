@@ -11,7 +11,7 @@
         <div
             class="flex flex-col md:flex-row md:gap-2 w-full max-w-6xl h-auto md:h-[calc(100vh-200px)] bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden flex-grow mx-auto animate-slide-in-right">
             <div
-                class="w-full md:w-1/2 h-96 md:h-auto flex items-center justify-center py-4 bg-gradient-to-br from-pink-200 to-blue-200 dark:from-blue-700 dark:to-purple-900 animate-fade-in">
+                class="w-full md:w-1/2 h-96 md:h-auto xl:h-auto flex items-center justify-center py-4 bg-gradient-to-br from-pink-200 to-blue-200 dark:from-blue-700 dark:to-purple-900 animate-fade-in">
                 <img src="{{ asset('images/El-senor-de-los-anillos-la-comunidad-del-anillo.webp') }}"
                     alt="Portada del Libro de El señor de los anillos: la Comunidad del Anillo"
                     class="max-h-full max-w-full object-contain rounded-lg shadow-2xl" />
@@ -23,8 +23,8 @@
                     El Señor de los Anillos: La Comunidad del Anillo
                 </p>
 
-                <x-p-book-info emoji="📖" label="Género" value="Fantasía" />
-                <x-p-book-info emoji="👤" label="Autor" value="J. R. R. Tolkien" />
+                <x-p-book-info emoji="📖" label="Género" value="Fantasía, aventura" />
+                <x-p-book-info emoji="👤" label="Autor" value="J. R. R. Tolkien J. R. R. Tolkien" />
                 <x-p-book-info emoji="📅" label="Año de Publicación" value="1954" />
 
 
@@ -32,14 +32,15 @@
 
                 <x-p-book-info class="mt-auto" emoji="🏁" label="Inicio de Lectura" value="13 de marzo del 2025" />
 
-                <div class="flex flex-col items-start">
+                <div class="mx-auto md:mx-0 text-center md:text-left">
                     <x-p-book-info emoji="📊" label="Progreso"
                         value="53% (241/458 páginas
                         leídas)" />
                     <div
-                        class="w-3/4 sm:w-2/3 md:w-full lg:w-4/5 xl:w-3/4 bg-gray-400 dark:bg-gray-700 rounded-full h-2.5">
-                        <div class="bg-blue-600 h-2.5 rounded-full transition-all duration-500 ease-out"
-                            style="width: 53%"></div>
+                        class="md:w-4/5 bg-gray-400 dark:bg-gray-700 rounded-full h-2.5">
+                        <div class="bg-blue-600 text-center h-2.5 rounded-full transition-all duration-500 ease-out"
+                            style="width: 53%">
+                        </div>
                     </div>
                 </div>
             </div>
