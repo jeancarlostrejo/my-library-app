@@ -50,7 +50,7 @@
     <section id="book-summary"
         class="w-full max-w-4xl p-6 bg-white dark:bg-gray-800 rounded-lg shadow-xl mb-8 mx-auto animate-fade-in-right animate-delay-1000">
         <h3 class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-4 text-center md:text-left">
-            Resumen del libro
+            Sinopsis del libro
         </h3>
         <div class="text-base md:text-lg text-gray-700 dark:text-gray-200 leading-relaxed text-left">
             <p class="mb-4">
