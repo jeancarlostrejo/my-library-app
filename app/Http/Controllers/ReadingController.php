@@ -8,6 +8,6 @@ class ReadingController extends Controller
 {
     public function current()
     {
-        return view('current_reading');
+        return view('readings.current');
     }
 }

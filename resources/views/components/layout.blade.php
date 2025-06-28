@@ -24,7 +24,7 @@
 </head>
 
 <body
-    class="flex flex-col items-center min-h-screen bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans {{ Route::is('welcome') ? 'fondo' : '' }} {{ Route::is('readings.current_reading') ? ' px-4 md:px-8 lg:px-16' : '' }}">
+    class="flex flex-col items-center min-h-screen bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans {{ Route::is('welcome') ? 'fondo' : '' }} {{ Route::is('readings.current') ? ' px-4 md:px-8 lg:px-16' : '' }}">
 
     <nav class="bg-gray-100 dark:bg-gray-800 shadow-md w-full fixed top-0 inset-x-0 z-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,7 +40,7 @@
 
                 <!-- Navbar desktop -->
                 <div class="hidden md:flex md:items-center md:ml-6 space-x-4">
-                    <x-nav-link :href="route('readings.current_reading')" :active="Route::is('readings.current_reading')">
+                    <x-nav-link :href="route('readings.current')" :active="Route::is('readings.current')">
                         ¿Qué libro estoy leyendo?
                     </x-nav-link>
 
@@ -76,7 +76,7 @@
         <!-- Navbar mobile -->
         <div class="md:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <x-nav-mobile-link :href="route('readings.current_reading')" :active="Route::is('readings.current_reading')">
+                <x-nav-mobile-link :href="route('readings.current')" :active="Route::is('readings.current')">
                     ¿Qué libro estoy leyendo?
                 </x-nav-mobile-link>
 
