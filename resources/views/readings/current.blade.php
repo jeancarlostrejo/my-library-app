@@ -4,20 +4,20 @@
     <section id="main-book-info-container"
         class="flex flex-col items-center justify-center w-full min-h-screen mt-16 pb-16">
         <h1
-            class="text-2xl lg:text-3xl uppercase font-extrabold py-4 text-blue-800 dark:text-blue-300 my-2 text-center animate-fade-in-scale">
+            class="text-2xl lg:text-3xl uppercase font-extrabold py-4 text-blue-800 dark:text-blue-300 my-2 text-center animate-scale">
             🌟 Libro que estoy leyendo 🌟
         </h1>
 
         <div
-            class="flex flex-col md:flex-row md:gap-2 w-full max-w-6xl h-auto md:h-[calc(100vh-200px)] bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden flex-grow mx-auto animate-slide-in-right">
+            class="flex flex-col md:flex-row md:gap-2 w-full max-w-6xl h-auto md:h-[calc(100vh-200px)] bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden flex-grow mx-auto animate-fade-in-up animate-delay-500">
             <div
-                class="w-full md:w-1/2 h-96 md:h-auto xl:h-auto flex items-center justify-center py-4 bg-gradient-to-br from-pink-200 to-blue-200 dark:from-blue-700 dark:to-purple-900 animate-fade-in">
+                class="w-full md:w-1/2 h-96 md:h-auto xl:h-auto flex items-center justify-center py-4 bg-gradient-to-br from-pink-200 to-blue-200 dark:from-blue-700 dark:to-purple-900 ">
                 <img src="{{ asset('images/El-senor-de-los-anillos-la-comunidad-del-anillo.webp') }}"
                     alt="Portada del Libro de El señor de los anillos: la Comunidad del Anillo"
-                    class="max-h-full max-w-full object-contain rounded-lg shadow-2xl" />
+                    class="max-h-full max-w-full object-contain rounded-lg shadow-2xl animate-zoom-in animate-delay-1000" />
             </div>
 
-            <div class="w-full md:w-1/2 flex flex-col p-4 animate-slide-in-up">
+            <div class="w-full md:w-1/2 flex flex-col p-4 animate-slide-in-bottom">
                 <p
                     class="text-xl md:text-2xl font-extrabold mb-4 leading-tight text-center md:text-left text-gray-800 dark:text-gray-200">
                     El Señor de los Anillos: La Comunidad del Anillo
@@ -48,7 +48,7 @@
     </section>
 
     <section id="book-summary"
-        class="w-full max-w-4xl p-6 bg-white dark:bg-gray-800 rounded-lg shadow-xl mb-8 animate-slide-in-up mx-auto animate-fade-in-scale">
+        class="w-full max-w-4xl p-6 bg-white dark:bg-gray-800 rounded-lg shadow-xl mb-8 mx-auto animate-fade-in-right animate-delay-1000">
         <h3 class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-4 text-center md:text-left">
             Resumen del libro
         </h3>
