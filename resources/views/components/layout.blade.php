@@ -24,7 +24,7 @@
 </head>
 
 <body
-    class="flex flex-col items-center min-h-screen bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans {{ Route::is('welcome') ? 'fondo' : '' }} {{ Route::is('readings.current') ? ' px-4 md:px-8 lg:px-16' : '' }}">
+    class="flex flex-col items-center min-h-screen bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans {{ Route::is('welcome') ? 'fondo' : '' }} {{ Route::is('readings.current') ? ' mx-4' : '' }}">
 
     <nav class="bg-gray-100 dark:bg-gray-800 shadow-md w-full fixed top-0 inset-x-0 z-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,7 +94,7 @@
         {{ $slot }}
     </main>
 
-    <footer class="w-full py-4 z-10 text-center text-gray-200 dark:text-gray-400 text-xl animate-slide-in-up">
+    <footer class="w-full mb-10 py-4 z-10 text-center {{ Route::is('welcome') ? 'text-gray-200 dark:text-gray-100 ' : 'text-gray-700 dark:text-gray-100' }} text-lg  ">
         Hecho con <span class="text-red-500 text-lg">&hearts;</span> por
         <a href="https://github.com/jeancarlostrejo" class="font-bold" target="_blank" rel="noopener noreferrer">
             Jean Carlos</a>
