@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Mi Biblioteca - {{ $title }} </title>
+    <title>Mi Biblioteca - {{ $title ?? 'La ' }} </title>
 
     <link rel="shortcut icon" href="{{ asset('images/lectura.png') }}" type="image/x-icon">
 
@@ -32,8 +32,7 @@
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('welcome') }}"
                         class="text-xl font-bold text-blue-500 dark:text-gray-200 flex items-center">
-                        <img src="{{ asset('images/lectura.png') }}" alt="Logo Mi Biblioteca" class="h-11 w-11 mr-2"
-                            style="height: 44px; width: 44px" />
+                        <img src="{{ asset('images/lectura.png') }}" alt="Logo Mi Biblioteca" class="h-11 w-11 mr-2" />
                         Mi Biblioteca
                     </a>
                 </div>
@@ -44,7 +43,7 @@
                         ¿Qué libro estoy leyendo?
                     </x-nav-link>
 
-                    <x-nav-link>
+                    <x-nav-link :href="route('readings.upcoming')" :active="Route::is('readings.upcoming')">
                         Próximas lecturas
                     </x-nav-link>
 
@@ -91,7 +90,9 @@
         </div>
     </nav>
 
-    {{ $slot }}
+    <main class="flex-grow">
+        {{ $slot }}
+    </main>
 
     <footer class="w-full py-4 z-10 text-center text-gray-200 dark:text-gray-400 text-xl animate-slide-in-up">
         Hecho con <span class="text-red-500 text-lg">&hearts;</span> por
