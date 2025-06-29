@@ -3,7 +3,7 @@
 
     <div class="max-w-6xl mx-auto px-4 py-8 mt-16">
         <h1
-            class="text-3xl font-bold text-blue-700 dark:text-blue-300 mb-4 p-4 text-center animate-fade-in animate-duration-500">
+            class="text-3xl font-bold text-gray-700 dark:text-blue-300 mb-4 p-4 text-center animate-fade-in animate-duration-500">
             ⏳Próximas lecturas⏳</h1>
 
         <div

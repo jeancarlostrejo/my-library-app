@@ -4,7 +4,7 @@
     <section id="main-book-info-container"
         class="flex flex-col items-center justify-center w-full min-h-screen mt-16 pb-16">
         <h1
-            class="text-2xl lg:text-3xl uppercase font-extrabold py-4 text-blue-800 dark:text-blue-300 my-2 text-center animate-scale">
+            class="text-2xl lg:text-3xl uppercase font-bold py-4 text-gray-700 dark:text-blue-400 my-2 text-center animate-scale">
             🌟 Libro que estoy leyendo 🌟
         </h1>
 
@@ -47,7 +47,7 @@
 
     <section id="book-summary"
         class="w-full max-w-4xl p-6 bg-white dark:bg-gray-800 rounded-lg shadow-xl mb-8 mx-auto animate-fade-in-right animate-delay-1000">
-        <h3 class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-4 text-center md:text-left">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-700 dark:text-blue-400 mb-4 text-center md:text-left">
             Sinopsis del libro
         </h3>
         <div class="text-base md:text-lg text-gray-700 dark:text-gray-200 leading-relaxed text-left">
