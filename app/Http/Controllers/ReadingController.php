@@ -10,4 +10,9 @@ class ReadingController extends Controller
     {
         return view('readings.current');
     }
+
+    public function upcoming()
+    {
+        return view('readings.upcoming');
+    }
 }
