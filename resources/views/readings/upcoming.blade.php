@@ -2,12 +2,15 @@
     <x-slot name="title">Próximas lecturas</x-slot>
 
     <div class="max-w-6xl mx-auto px-4 py-8 mt-16">
-        <h1 class="text-3xl font-bold text-blue-700 dark:text-blue-300 mb-8 text-center">⏳Próximas lecturas⏳</h1>
+        <h1
+            class="text-3xl font-bold text-blue-700 dark:text-blue-300 mb-4 p-4 text-center animate-fade-in animate-duration-500">
+            ⏳Próximas lecturas⏳</h1>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 min-h-auto">
+        <div
+            class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 min-h-auto animate-fade-in-up animate-duration-1000 animate-delay-[800ms]">
 
             <!-- Libro 1 -->
-            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden ">
+            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300 ">
                 <a href="#" class="flex-shrink-0">
                     <img src="{{ asset('images/el-ultimo-giro.webp') }}" alt="Portada el último giro"
                         class="w-auto h-48 object-contain flex-shrink-0" />
@@ -33,7 +36,7 @@
             </div>
 
             <!-- Libro 2 -->
-            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden ">
+            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300  ">
                 <a href="#" class="flex-shrink-0">
                     <img src="{{ asset('images/zarco.webp') }}" alt="Portada Zarco"
                         class="w-auto h-48 object-contain flex-shrink-0" />
@@ -58,7 +61,7 @@
             </div>
 
             <!-- Libro 3 -->
-            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden ">
+            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300  ">
                 <a href="#" class="flex-shrink-0">
                     <img src="{{ asset('images/los-juegos-del-hambre-5-amanecer-en-la-cosecha.webp') }}"
                         alt="Portada Amanecer en la cosecha" class="w-auto h-48 object-contain flex-shrink-0" />
@@ -84,7 +87,7 @@
             </div>
 
             <!-- Libro 4 -->
-            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden ">
+            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300  ">
                 <a href="#" class="flex-shrink-0">
                     <img src="{{ asset('images/la-muy-catastrofica-visita-al-zoo-joel-dicker.webp') }}"
                         alt="Portada La muy catastrófica visita al zoo"
@@ -111,7 +114,7 @@
             </div>
 
             <!-- Libro 5 -->
-            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden ">
+            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300  ">
                 <a href="#" class="flex-shrink-0">
                     <img src="{{ asset('images/morir-no-es-tan-facil.webp') }}" alt="Portada Morir no es tan fácil"
                         class="w-auto h-48 object-contain flex-shrink-0" />
@@ -137,7 +140,7 @@
             </div>
 
             <!-- Libro 6 -->
-            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden ">
+            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300  ">
                 <a href="#" class="flex-shrink-0">
                     <img src="{{ asset('images/rebelion-en-la-granja.webp') }}" alt="Portada Rebelión en la granja"
                         class="w-auto h-48 object-contain flex-shrink-0" />
@@ -163,7 +166,7 @@
             </div>
 
             <!-- Libro 7 -->
-            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden ">
+            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300  ">
                 <a href="#" class="flex-shrink-0">
                     <img src="{{ asset('images/El-senor-de-los-anillos-las-dos-torres.webp') }}"
                         alt="Portada El señor de los anillos: Las dos torres"
@@ -190,7 +193,7 @@
             </div>
 
             <!-- Libro 8 -->
-            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden ">
+            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300  ">
                 <a href="#" class="flex-shrink-0">
                     <img src="{{ asset('images/el-senor-de-los-anillos-el-retorno-del-rey.webp') }}"
                         alt="Portada El señor de los anillos: El retorno del rey"
