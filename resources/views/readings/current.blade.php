@@ -23,21 +23,19 @@
                     El Señor de los Anillos: La Comunidad del Anillo
                 </p>
 
-                <x-p-book-info emoji="📖" label="Género" value="Fantasía, aventura" />
-                <x-p-book-info emoji="👤" label="Autor" value="J. R. R. Tolkien J. R. R. Tolkien" />
-                <x-p-book-info emoji="📅" label="Año de Publicación" value="1954" />
+                <div>
+                    <x-p-book-info emoji="📖" label="Género" value="Fantasía, aventura" />
+                    <x-p-book-info emoji="👤" label="Autor" value="J. R. R. Tolkien J. R. R. Tolkien" />
+                    <x-p-book-info emoji="📅" label="Año de Publicación" value="1954" />
+                    <x-p-book-info class="mb-10" emoji="📄" label="Páginas" value="458" />
+                </div>
 
-
-                <x-p-book-info class="mb-10" emoji="📄" label="Páginas" value="458" />
-
-                <x-p-book-info class="mt-auto" emoji="🏁" label="Inicio de Lectura" value="13 de marzo del 2025" />
-
-                <div class="mx-auto md:mx-0 text-center md:text-left">
+                <div class="mx-auto mt-auto md:mx-0 text-center md:text-left">
+                    <x-p-book-info emoji="🏁" label="Inicio de Lectura" value="13 de marzo del 2025" />
                     <x-p-book-info emoji="📊" label="Progreso"
                         value="53% (241/458 páginas
                         leídas)" />
-                    <div
-                        class="md:w-4/5 bg-gray-400 dark:bg-gray-700 rounded-full h-2.5">
+                    <div class="md:w-4/5 bg-gray-400 dark:bg-gray-700 rounded-full h-2.5">
                         <div class="bg-blue-600 text-center h-2.5 rounded-full transition-all duration-500 ease-out"
                             style="width: 53%">
                         </div>
