@@ -12,7 +12,7 @@
     @if (Route::is('welcome'))
         <style>
             .fondo {
-                background-image: url('{{ asset('images/fondo-light.jpg') }}');
+                background-image: url('{{ asset('images/fondo-light.webp') }}');
                 background-size: cover;
                 background-position: center;
                 background-attachment: fixed;
@@ -79,7 +79,7 @@
                     ¿Qué libro estoy leyendo?
                 </x-nav-mobile-link>
 
-                <x-nav-mobile-link>
+                <x-nav-mobile-link :href="route('readings.upcoming')" :active="Route::is('readings.upcoming')">
                     Próximas lecturas
                 </x-nav-mobile-link>
 
