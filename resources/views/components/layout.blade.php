@@ -102,6 +102,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Toggle mobile menu visibility
             const button = document.getElementById("mobile-menu-button");
             const mobileMenu = document.getElementById("mobile-menu");
             const hamburgerIcon = document.getElementById("hamburger-icon");
@@ -114,6 +115,19 @@
 
                 hamburgerIcon.classList.toggle("hidden");
                 closeIcon.classList.toggle("hidden");
+            });
+
+            // Close the mobile menu when clicking outside of it
+            document.addEventListener("click", function(event) {
+                if (
+                    !button.contains(event.target) &&
+                    !mobileMenu.contains(event.target)
+                ) {
+                    mobileMenu.classList.add("hidden");
+                    button.setAttribute("aria-expanded", "false");
+                    hamburgerIcon.classList.remove("hidden");
+                    closeIcon.classList.add("hidden");
+                }
             });
         });
     </script>
