@@ -19,12 +19,12 @@
                     <div>
                         <h2>
                             <a href="#"
-                                class="text-lg hover:underline font-bold text-gray-900 dark:text-gray-100 line-clamp-1"
+                                class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
                                 title="El último giro">El
                                 último giro
                             </a>
                         </h2>
-                        <p class="text-sm text-blue-700 dark:text-blue-300 font-medium mb-4 line-clamp-1">Paola Boutellier</p>
+                        <p class="text-sm text-gray-400 dark:text-blue-300 font-medium dark:font-normal mb-4 line-clamp-1">Paola Boutellier</p>
                         <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-5">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aspernatur provident modi
                             optio tenetur, error assumenda vel delectus, cumque consectetur itaque veritatis nesciunt.
@@ -45,11 +45,11 @@
                     <div>
                         <h2>
                             <a href="#"
-                                class="text-lg hover:underline font-bold text-gray-900 dark:text-gray-100 line-clamp-1"
+                                class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
                                 title="Zarco">Zarco
                             </a>
                         </h2>
-                        <p class="text-sm text-blue-700 dark:text-blue-300 font-medium mb-4 line-clamp-1">Jess GR</p>
+                        <p class="text-sm text-gray-400 dark:text-blue-300 font-medium dark:font-normal mb-4 line-clamp-1">Jess GR</p>
                         <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-5">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aspernatur provident modi
                             optio tenetur, error assumenda vel delectus, cumque consectetur itaque veritatis nesciunt.
@@ -70,12 +70,12 @@
                     <div>
                         <h2>
                             <a href="#"
-                                class="text-lg hover:underline font-bold text-gray-900 dark:text-gray-100 line-clamp-1"
+                                class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
                                 title="Amanecer en la cosecha">Amanecer
                                 en la cosecha
                             </a>
                         </h2>
-                        <p class="text-sm text-blue-700 dark:text-blue-300 font-medium mb-4 line-clamp-1">Suzanne Collins</p>
+                        <p class="text-sm text-gray-400 dark:text-blue-300 font-medium dark:font-normal mb-4 line-clamp-1">Suzanne Collins</p>
                         <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-5">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aspernatur provident modi
                             optio tenetur, error assumenda vel delectus, cumque consectetur itaque veritatis nesciunt.
@@ -97,12 +97,12 @@
                     <div>
                         <h2>
                             <a href="#"
-                                class="text-lg hover:underline font-bold text-gray-900 dark:text-gray-100 line-clamp-1"
+                                class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
                                 title="La muy catastrófica visita al zoo">La
                                 muy catastrófica visita al zoo
                             </a>
                         </h2>
-                        <p class="text-sm text-blue-700 dark:text-blue-300 font-medium mb-4 line-clamp-1">Joël Dicker</p>
+                        <p class="text-sm text-gray-400 dark:text-blue-300 font-medium dark:font-normal mb-4 line-clamp-1">Joël Dicker</p>
                         <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-5">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aspernatur provident modi
                             optio tenetur, error assumenda vel delectus, cumque consectetur itaque veritatis nesciunt.
@@ -123,12 +123,12 @@
                     <div>
                         <h2>
                             <a href="#"
-                                class="text-lg hover:underline font-bold text-gray-900 dark:text-gray-100 line-clamp-1"
+                                class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
                                 title="Morir no es tan fácil">Morir
                                 no es tan fácil
                             </a>
                         </h2>
-                        <p class="text-sm text-blue-700 dark:text-blue-300 font-medium mb-4 line-clamp-1">Belinda Bauer</p>
+                        <p class="text-sm text-gray-400 dark:text-blue-300 font-medium dark:font-normal mb-4 line-clamp-1">Belinda Bauer</p>
                         <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-5">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aspernatur provident modi
                             optio tenetur, error assumenda vel delectus, cumque consectetur itaque veritatis nesciunt.
@@ -149,12 +149,12 @@
                     <div>
                         <h2>
                             <a href="#"
-                                class="text-lg hover:underline font-bold text-gray-900 dark:text-gray-100 line-clamp-1"
+                                class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
                                 title="Rebelión en la granja">Rebelión
                                 en la granja
                             </a>
                         </h2>
-                        <p class="text-sm text-blue-700 dark:text-blue-300 font-medium mb-4 line-clamp-1">George Orwell</p>
+                        <p class="text-sm text-gray-400 dark:text-blue-300 font-medium dark:font-normal mb-4 line-clamp-1">George Orwell</p>
                         <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-5">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aspernatur provident modi
                             optio tenetur, error assumenda vel delectus, cumque consectetur itaque veritatis nesciunt.
@@ -176,12 +176,12 @@
                     <div>
                         <h2>
                             <a href="#"
-                                class="text-lg hover:underline font-bold text-gray-900 dark:text-gray-100 line-clamp-1"
+                                class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
                                 title="El Señor de los Anillos: Las Dos Torres">El
                                 Señor de los Anillos: Las Dos Torres
                             </a>
                         </h2>
-                        <p class="text-sm text-blue-700 dark:text-blue-300 font-medium mb-4 line-clamp-1">J. R. R. Tolkien</p>
+                        <p class="text-sm text-gray-400 dark:text-blue-300 font-medium dark:font-normal mb-4 line-clamp-1">J. R. R. Tolkien</p>
                         <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-5">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aspernatur provident modi
                             optio tenetur, error assumenda vel delectus, cumque consectetur itaque veritatis nesciunt.
@@ -203,12 +203,12 @@
                     <div>
                         <h2>
                             <a href="#"
-                                class="text-lg hover:underline font-bold text-gray-900 dark:text-gray-100 line-clamp-1"
+                                class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
                                 title="El Señor de los Anillos: El Retorno del Rey">El
                                 Señor de los Anillos: El Retorno del Rey
                             </a>
                         </h2>
-                        <p class="text-sm text-blue-700 dark:text-blue-300 font-medium mb-4 line-clamp-1">J. R. R. Tolkien</p>
+                        <p class="text-sm text-gray-400 dark:text-blue-300 font-medium dark:font-normal mb-4 line-clamp-1">J. R. R. Tolkien</p>
                         <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-5">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aspernatur provident modi
                             optio tenetur, error assumenda vel delectus, cumque consectetur itaque veritatis nesciunt.
