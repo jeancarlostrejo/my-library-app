@@ -25,7 +25,7 @@
 
                 <div>
                     <x-p-book-info emoji="📖" label="Género" value="Fantasía, aventura" />
-                    <x-p-book-info emoji="👤" label="Autor" value="J. R. R. Tolkien J. R. R. Tolkien" />
+                    <x-p-book-info emoji="👤" label="Autor" value="J. R. R. Tolkien" />
                     <x-p-book-info emoji="📅" label="Año de Publicación" value="1954" />
                     <x-p-book-info class="mb-10" emoji="📄" label="Páginas" value="458" />
                 </div>
