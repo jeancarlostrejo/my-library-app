@@ -21,7 +21,7 @@
                             <a href="#"
                                 class="text-lg hover:underline font-bold text-gray-900 dark:text-gray-100 line-clamp-1"
                                 title="El último giro">El
-                                último giro</a>
+                                último giro
                             </a>
                         </h2>
                         <p class="text-sm text-blue-700 dark:text-blue-300 mb-4 line-clamp-1">Paola Boutellier</p>
@@ -46,7 +46,7 @@
                         <h2>
                             <a href="#"
                                 class="text-lg hover:underline font-bold text-gray-900 dark:text-gray-100 line-clamp-1"
-                                title="Zarco">Zarco</a>
+                                title="Zarco">Zarco
                             </a>
                         </h2>
                         <p class="text-sm text-blue-700 dark:text-blue-300 mb-4 line-clamp-1">Jess GR</p>
@@ -72,7 +72,7 @@
                             <a href="#"
                                 class="text-lg hover:underline font-bold text-gray-900 dark:text-gray-100 line-clamp-1"
                                 title="Amanecer en la cosecha">Amanecer
-                                en la cosecha</a>
+                                en la cosecha
                             </a>
                         </h2>
                         <p class="text-sm text-blue-700 dark:text-blue-300 mb-4 line-clamp-1">Suzanne Collins</p>
@@ -99,7 +99,7 @@
                             <a href="#"
                                 class="text-lg hover:underline font-bold text-gray-900 dark:text-gray-100 line-clamp-1"
                                 title="La muy catastrófica visita al zoo">La
-                                muy catastrófica visita al zoo</a>
+                                muy catastrófica visita al zoo
                             </a>
                         </h2>
                         <p class="text-sm text-blue-700 dark:text-blue-300 mb-4 line-clamp-1">Joël Dicker</p>
@@ -125,7 +125,7 @@
                             <a href="#"
                                 class="text-lg hover:underline font-bold text-gray-900 dark:text-gray-100 line-clamp-1"
                                 title="Morir no es tan fácil">Morir
-                                no es tan fácil</a>
+                                no es tan fácil
                             </a>
                         </h2>
                         <p class="text-sm text-blue-700 dark:text-blue-300 mb-4 line-clamp-1">Belinda Bauer</p>
@@ -151,7 +151,7 @@
                             <a href="#"
                                 class="text-lg hover:underline font-bold text-gray-900 dark:text-gray-100 line-clamp-1"
                                 title="Rebelión en la granja">Rebelión
-                                en la granja</a>
+                                en la granja
                             </a>
                         </h2>
                         <p class="text-sm text-blue-700 dark:text-blue-300 mb-4 line-clamp-1">George Orwell</p>
@@ -178,7 +178,7 @@
                             <a href="#"
                                 class="text-lg hover:underline font-bold text-gray-900 dark:text-gray-100 line-clamp-1"
                                 title="El Señor de los Anillos: Las Dos Torres">El
-                                Señor de los Anillos: Las Dos Torres</a>
+                                Señor de los Anillos: Las Dos Torres
                             </a>
                         </h2>
                         <p class="text-sm text-blue-700 dark:text-blue-300 mb-4 line-clamp-1">J. R. R. Tolkien</p>
@@ -205,7 +205,7 @@
                             <a href="#"
                                 class="text-lg hover:underline font-bold text-gray-900 dark:text-gray-100 line-clamp-1"
                                 title="El Señor de los Anillos: El Retorno del Rey">El
-                                Señor de los Anillos: El Retorno del Rey</a>
+                                Señor de los Anillos: El Retorno del Rey
                             </a>
                         </h2>
                         <p class="text-sm text-blue-700 dark:text-blue-300 mb-4 line-clamp-1">J. R. R. Tolkien</p>
