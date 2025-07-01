@@ -1,23 +1,25 @@
 <x-layout>
     <x-slot name="title">Lectura actual</x-slot>
 
-    <section
-        class="flex flex-col items-center justify-center w-full min-h-screen mt-16 pb-16">
+    <!-- Banner de lectura actual -->
+    <section class="flex flex-col items-center justify-center w-full my-16">
         <h1
-            class="text-2xl lg:text-3xl uppercase font-bold py-4 text-gray-700 dark:text-blue-400 my-2 text-center animate-scale">
+            class="text-2xl lg:text-3xl uppercase font-bold py-4 text-gray-700 dark:text-blue-400 mb-2 text-center animate-scale">
             🌟 Libro que estoy leyendo 🌟
         </h1>
 
+       <!--  Datos del libro -->
         <div
-            class="flex flex-col md:flex-row md:gap-2 w-full max-w-6xl h-auto md:h-[calc(100vh-200px)] bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden flex-grow mx-auto animate-fade-in-up animate-delay-500">
+            class="grid grid-cols-1 md:grid-cols-6 md:gap-2 w-full max-w-6xl bg-white dark:bg-gray-800 rounded-lg shadow-xl mx-auto animate-fade-in-up animate-delay-500">
+
             <div
-                class="w-full md:w-1/2 h-96 md:h-auto xl:h-auto flex items-center justify-center py-4 bg-gradient-to-br from-pink-200 to-blue-200 dark:from-blue-700 dark:to-purple-900 ">
+                class="col-span-1 md:col-span-3 flex items-center justify-center py-4 bg-gradient-to-br from-pink-200 to-blue-200 dark:from-blue-700 dark:to-purple-900 rounded-lg">
                 <img src="{{ asset('images/El-senor-de-los-anillos-la-comunidad-del-anillo.webp') }}"
                     alt="Portada del Libro de El señor de los anillos: la Comunidad del Anillo"
-                    class="max-h-full max-w-full object-contain rounded-lg shadow-2xl animate-zoom-in animate-delay-1000" />
+                    class="max-h-80 md:max-h-100 xl:max-h-110 max-w-full object-contain rounded-lg shadow-2xl animate-zoom-in animate-delay-1000" />
             </div>
 
-            <div class="w-full md:w-1/2 flex flex-col p-4 animate-slide-in-bottom">
+            <div class="col-span-1 md:col-span-3 flex flex-col p-4 animate-slide-in-bottom overflow-auto">
                 <p
                     class="text-xl md:text-2xl font-extrabold mb-4 leading-tight text-center md:text-left text-gray-800 dark:text-gray-200">
                     El Señor de los Anillos: La Comunidad del Anillo
@@ -28,16 +30,16 @@
                     <x-p-book-info emoji="👤" label="Autor" value="J. R. R. Tolkien" />
                     <x-p-book-info emoji="📅" label="Año de Publicación" value="1954" />
                     <x-p-book-info class="mb-10" emoji="📄" label="Páginas" value="458" />
-                </div>
 
-                <div class="mx-auto mt-auto md:mx-0 text-center md:text-left">
-                    <x-p-book-info emoji="🏁" label="Inicio de Lectura" value="13 de marzo del 2025" />
-                    <x-p-book-info emoji="📊" label="Progreso"
-                        value="53% (241/458 páginas
-                        leídas)" />
-                    <div class="md:w-4/5 bg-gray-400 dark:bg-gray-700 rounded-full h-2.5">
-                        <div class="bg-blue-600 text-center h-2.5 rounded-full transition-all duration-500 ease-out"
-                            style="width: 53%">
+                    <div class="md:text-left">
+                        <x-p-book-info emoji="🏁" label="Inicio de Lectura" value="13/03/2025" />
+                        <x-p-book-info emoji="📊" label="Progreso"
+                            value="53% (241 páginas
+                            leídas)" />
+                        <div class="mx-auto w-1/2 md:w-3/5 md:mx-0 bg-gray-400 dark:bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-blue-600 h-2.5 rounded-full transition-all duration-500 ease-out"
+                                style="width: 53%">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -45,8 +47,9 @@
         </div>
     </section>
 
+    <!-- Sinopsis del libro-->
     <section
-        class="w-full max-w-4xl p-6 bg-white dark:bg-gray-800 rounded-lg shadow-xl mb-8 mx-auto animate-fade-in-right animate-delay-1000">
+        class="w-full max-w-6xl p-6 bg-white dark:bg-gray-800 rounded-lg shadow-xl mb-8 mx-auto animate-fade-in-right animate-delay-1000">
         <h3 class="text-2xl md:text-3xl font-bold text-gray-700 dark:text-blue-400 mb-4 text-center md:text-left">
             Sinopsis del libro
         </h3>
