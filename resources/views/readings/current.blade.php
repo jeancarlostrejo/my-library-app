@@ -1,7 +1,7 @@
 <x-layout>
-    <x-slot name="title">{{ __('Current Reading') }}</x-slot>
+    <x-slot name="title">Lectura actual</x-slot>
 
-    <section id="main-book-info-container"
+    <section
         class="flex flex-col items-center justify-center w-full min-h-screen mt-16 pb-16">
         <h1
             class="text-2xl lg:text-3xl uppercase font-bold py-4 text-gray-700 dark:text-blue-400 my-2 text-center animate-scale">
@@ -45,7 +45,7 @@
         </div>
     </section>
 
-    <section id="book-summary"
+    <section
         class="w-full max-w-4xl p-6 bg-white dark:bg-gray-800 rounded-lg shadow-xl mb-8 mx-auto animate-fade-in-right animate-delay-1000">
         <h3 class="text-2xl md:text-3xl font-bold text-gray-700 dark:text-blue-400 mb-4 text-center md:text-left">
             Sinopsis del libro
@@ -62,6 +62,4 @@
             </p>
         </div>
     </section>
-
-
 </x-layout>
