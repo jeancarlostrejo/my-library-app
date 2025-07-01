@@ -8,42 +8,49 @@ Este proyecto es un espacio personal donde comparto mis lecturas actuales, próx
 
 ## Características principales
 
-- **Libro actual:**  
-  Muestra información detallada del libro que estoy leyendo en este momento, incluyendo portada, título, autor, género, progreso y sinopsis.
+-   **Libro actual:** Muestra información detallada del libro que estoy leyendo en este momento, incluyendo portada, título, autor, género, progreso, la sinopsis e información acerca del autor del libro
 
-- **Próximas lecturas:**  
-  Listado visual de los libros que planeo leer próximamente, presentados en tarjetas con imagen, título, autor y breve descripción.
+-   **Próximas lecturas:** Listado de los libros con su información, los cuales leer próximamente
 
-- **Libros leídos:**  
-  Sección donde se muestran todos los libros que he leído hasta ahora, permitiendo a los visitantes explorar mi historial de lecturas.
+-   **Libros leídos(próximamente):** Sección donde se muestran todos los libros que he leído hasta ahora, permitiendo a los visitantes explorar mi historial de lecturas.
+-   **Panel administrativo (próximamente):** Un panel de administración para gestionar los libros y autores, permitiendo agregar, editar y eliminar información de manera sencilla.
+
+-   **Reseña de IA (próximamente)**: generación de una reseña de los libros utilizando inteligencia artificial, para ofrecer una visión más profunda de cada obra para los visitantes.
 
 ## Propósito del sitio
 
-El sitio está pensado como una vitrina para que cualquier visitante pueda descubrir mi gusto por la lectura.
+El sitio está pensado como una vitrina para que cualquier visitante pueda descubrir y mi gusto por la lectura.
 
 ## Para el desarrollo
 
-El proyecto busca tener funcionalidades administrativas para gestionar los libros:
-- Cargar información de nuevos libros (portada, título, autor, género, sinopsis, etc.).
-- Guardar y actualizar los datos en la base de datos.
-- Mostrar la información de manera dinámica y visualmente atractiva.
+El proyecto busca tener funcionalidades administrativas para gestionar los libros y autores:
 
-## Tecnologías utilizadas
+-   Cargar información de nuevos libros (portada, título, autor, género, sinopsis, etc.).
+-   Guardar y actualizar los datos en la base de datos.
+-   Mostrar la información de manera dinámica y visualmente atractiva.
+-  Permitir la edición y eliminación de libros y autores desde el panel administrativo.
+- Implementar una funcionalidad de reseñas generadas por IA para enriquecer la experiencia del usuario.
 
-- [**Laravel 12**](https://laravel.com/)
-- [**Tailwind CSS v4**](https://tailwindcss.com/) (estilos y utilidades responsivas)
-- [**MySQL**](https://www.mysql.com/) (base de datos)
-- [**FilamentPHP**](https://filamentphp.com/) (panel administrativo)
+
+## Tecnologías a utilizar
+
+-   [**Laravel 12**](https://laravel.com/)
+-   [**Tailwind CSS v4**](https://tailwindcss.com/) (estilos y utilidades responsivas)
+-   [**MySQL**](https://www.mysql.com/) (base de datos)
+-   [**FilamentPHP**](https://filamentphp.com/) (panel administrativo)
+- [**PrismPHP**](https://prismphp.com/): paquete para integracion de LLM (Large Language Models) como OpenAI, Anthropic, Gemini, DeepSeek, etc. Para generar las reseñas de los libros.
 
 ## Instalación y uso
 
 1. Clona el repositorio:
-```bash 
+
+```bash
 git clone <URL_DEL_REPOSITORIO>
 cd books-app
 ```
 
 2. Instala las dependencias:
+
 ```bash
 composer install
 npm install
@@ -52,16 +59,19 @@ npm install
 3. Configura el archivo `.env` con tus credenciales de base de datos y otras configuraciones necesarias.
 
 4. Genera la clave de aplicación:
+
 ```bash
 php artisan key:generate
 ```
 
 5. Ejecuta las migraciones de ser necesario
+
 ```bash
 php artisan migrate
 ```
 
 6. Levanta el servidor de desarrollo:
+
 ```bash
 php artisan serve
 npm run dev
