@@ -98,6 +98,7 @@
         Hecho con <span class="text-red-500 text-lg">&hearts;</span> por
         <a href="https://github.com/jeancarlostrejo" class="font-bold" target="_blank" rel="noopener noreferrer">
             Jean Carlos</a>
+            <p class="text-base">&copy; {{ now()->format('Y') }}</p>
     </footer>
 
     <script>
