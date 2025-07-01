@@ -65,4 +65,44 @@
             </p>
         </div>
     </section>
+
+    <!-- Información sobre el autor-->
+    <section
+        class="w-full max-w-6xl p-6 flex flex-col gap-4 bg-white dark:bg-gray-800 rounded-lg shadow-xl mb-8 mx-auto animate-fade-in-right animate-delay-1000">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-700 dark:text-blue-400 mb-4 text-center md:text-left">
+            Sobre el autor: J. R. R. Tolkien
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-6 gap-8">
+            <figure
+                class="md:col-span-2 flex flex-col items-center md:items-start rounded-lg justify-center md:justify-start">
+                <img src="{{ asset('images/jrr-tolkien.webp') }}" alt="Foto de J. R. R. Tolkien"
+                    class="w-full max-w-xs md:max-w-md max-h-100 shadow-2xl object-contain rounded-lg animate-zoom-in animate-delay-500" />
+                <figcaption class="w-full text-center mt-2 italic">J. R. R. Tolkien</figcaption>
+            </figure>
+
+            <div class="md:col-span-4 items-left sm:justify-center md:justify-start">
+                <p class="text-base md:text-lg text-gray-700 dark:text-gray-200 leading-relaxed text-left">
+                    John Ronald Reuel Tolkien (1892-1973) fue un escritor, poeta, filólogo y profesor universitario
+                    británico, mundialmente conocido por ser el padre de la literatura fantástica moderna. Nacido en
+                    Bloemfontein, Sudáfrica, Tolkien se mudó a Inglaterra a una edad temprana. Su profundo amor por los
+                    idiomas, especialmente las lenguas antiguas y el estudio de mitologías, lo llevó a crear mundos y
+                    lenguas enteras, un rasgo distintivo de su obra.
+
+                    Fue profesor de Anglosajón en la Universidad de Oxford de 1925 a 1945, y posteriormente profesor de
+                    Lengua y Literatura Inglesas hasta 1959. Su erudición en filología y literatura medieval, incluyendo
+                    el Beowulf, el Kalevala y las sagas nórdicas, influyó profundamente en su creación de la Tierra
+                    Media y sus historias.
+
+                    La obra maestra de Tolkien, "El Señor de los Anillos", junto con su precuela "El Hobbit" y el
+                    póstumo "El Silmarillion", no solo redefinió el género de la fantasía, sino que también creó un
+                    universo literario vasto y detallado con su propia historia, geografía, culturas y lenguas. Su
+                    influencia es inmensa y sigue inspirando a innumerables autores y artistas en todo el mundo. Tolkien
+                    no solo escribió historias; construyó un legado mitológico que perdura hasta el día de hoy.
+                </p>
+
+            </div>
+        </div>
+
+    </section>
 </x-layout>
