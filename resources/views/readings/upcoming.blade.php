@@ -9,215 +9,37 @@
         <div
             class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-auto animate-fade-in-up animate-duration-1000 animate-delay-[800ms]">
 
-            <!-- Libro 1 -->
-            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300 ">
-                <a href="#" class="flex-shrink-0">
-                    <img src="{{ asset('images/el-ultimo-giro.webp') }}" alt="Portada el último giro"
-                        class="w-auto h-50 object-contain flex-shrink-0" />
-                </a>
-                <div class="flex flex-col justify-between p-4 w-full">
-                    <div>
-                        <h2>
-                            <a href="#"
-                                class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
-                                title="El último giro">El
-                                último giro
-                            </a>
-                        </h2>
-                        <p class="text-sm text-gray-400 dark:text-blue-300 font-medium dark:font-normal mb-4 line-clamp-1">Paola Boutellier</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-5">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aspernatur provident modi
-                            optio tenetur, error assumenda vel delectus, cumque consectetur itaque veritatis nesciunt.
-                            Debitis laborum reiciendis rem nulla in sunt ipsam aliquid deleniti explicabo, vero quas
-                            quaerat, eum totam! Voluptates saepe aperiam esse hic eaque non magnam corporis r
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <x-book-item-list imageUrl="images/el-ultimo-giro.webp" titleBook="El último giro"
+                authorBook="Paola Boutellier"
+                synopsis="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus corporis consequatur incidunt at sed quaerat distinctio adipisci natus. Aut necessitatibus inventore nesciunt illum explicabo expedita error consequuntur beatae perferendis esse suscipit reiciendis mollitia quidem aliquam sapiente officia itaque, distinctio in iusto sequi! Qui beatae natus, nisi modi excepturi quas aliquam eum alias nostrum tempora dolores eius neque, adipisci vero. Illo assumenda doloribus beatae illum rerum, eaque quas a quam, aliquam, officia laudantium porro blanditiis id repellat suscipit consectetur quo quisquam! Commodi odit officiis qui sit eius ducimus quasi praesentium deleniti ratione ipsum repudiandae, sunt impedit nobis quo dolor dignissimos quibusdam." />
 
-            <!-- Libro 2 -->
-            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300  ">
-                <a href="#" class="flex-shrink-0">
-                    <img src="{{ asset('images/zarco.webp') }}" alt="Portada Zarco"
-                        class="w-auto h-50 object-contain flex-shrink-0" />
-                </a>
-                <div class="flex flex-col justify-between p-4 w-full">
-                    <div>
-                        <h2>
-                            <a href="#"
-                                class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
-                                title="Zarco">Zarco
-                            </a>
-                        </h2>
-                        <p class="text-sm text-gray-400 dark:text-blue-300 font-medium dark:font-normal mb-4 line-clamp-1">Jess GR</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-5">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aspernatur provident modi
-                            optio tenetur, error assumenda vel delectus, cumque consectetur itaque veritatis nesciunt.
-                            Debitis laborum reiciendis rem nulla in sunt ipsam aliquid deleniti explicabo, vero quas
-                            quaerat, eum totam! Voluptates saepe aperiam esse hic eaque non magnam corporis r
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <x-book-item-list imageUrl="images/zarco.webp" titleBook="Zarco" authorBook="Jess GR"
+                synopsis="Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto optio laboriosam dignissimos sit ea quas vero tempora odit illum facere necessitatibus, quasi repellendus accusamus praesentium, commodi veniam iste! Inventore deleniti voluptate, suscipit amet et mollitia. Earum, fugit ducimus. Accusamus suscipit tempora asperiores facilis itaque soluta magni veniam consequuntur iure esse quam assumenda tempore rem, facere quasi molestias cum culpa at excepturi hic recusandae. Ea voluptatem tenetur quisquam, similique voluptatibus nostrum distinctio temporibus autem inventore consectetur voluptas repudiandae illo commodi rem ducimus praesentium necessitatibus a quos omnis amet asperiores animi totam tempore. Odio dicta voluptatum quas veniam qui aliquid hic molestias." />
 
-            <!-- Libro 3 -->
-            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300  ">
-                <a href="#" class="flex-shrink-0">
-                    <img src="{{ asset('images/los-juegos-del-hambre-5-amanecer-en-la-cosecha.webp') }}"
-                        alt="Portada Amanecer en la cosecha" class="w-auto h-50 object-contain flex-shrink-0" />
-                </a>
-                <div class="flex flex-col justify-between p-4 w-full">
-                    <div>
-                        <h2>
-                            <a href="#"
-                                class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
-                                title="Amanecer en la cosecha">Amanecer
-                                en la cosecha
-                            </a>
-                        </h2>
-                        <p class="text-sm text-gray-400 dark:text-blue-300 font-medium dark:font-normal mb-4 line-clamp-1">Suzanne Collins</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-5">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aspernatur provident modi
-                            optio tenetur, error assumenda vel delectus, cumque consectetur itaque veritatis nesciunt.
-                            Debitis laborum reiciendis rem nulla in sunt ipsam aliquid deleniti explicabo, vero quas
-                            quaerat, eum totam! Voluptates saepe aperiam esse hic eaque non magnam corporis r
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <x-book-item-list imageUrl="images/los-juegos-del-hambre-5-amanecer-en-la-cosecha.webp"
+                titleBook="Amanecer en la cosecha" authorBook="Suzanne Collins"
+                synopsis="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt error ipsa at facere perspiciatis in. Quia iusto dolorum non fugit voluptatum, ea mollitia veritatis qui incidunt exercitationem ullam sit. Omnis, laborum. Soluta iusto cumque, similique atque quod non officia porro ratione deleniti dolore possimus obcaecati pariatur ullam fuga consequuntur assumenda? Itaque nisi odit iste velit inventore nemo quos harum, accusamus possimus facilis incidunt quisquam laboriosam architecto vel consequuntur unde praesentium sequi rem beatae deleniti delectus? Sapiente odit culpa tempora rerum consequuntur repudiandae repellendus obcaecati, vero ipsa autem suscipit enim porro provident. Voluptates eveniet aperiam tempore cumque! Aliquam, exercitationem recusandae!" />
 
-            <!-- Libro 4 -->
-            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300  ">
-                <a href="#" class="flex-shrink-0">
-                    <img src="{{ asset('images/la-muy-catastrofica-visita-al-zoo-joel-dicker.webp') }}"
-                        alt="Portada La muy catastrófica visita al zoo"
-                        class="w-auto h-50 object-contain flex-shrink-0" />
-                </a>
-                <div class="flex flex-col justify-between p-4 w-full">
-                    <div>
-                        <h2>
-                            <a href="#"
-                                class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
-                                title="La muy catastrófica visita al zoo">La
-                                muy catastrófica visita al zoo
-                            </a>
-                        </h2>
-                        <p class="text-sm text-gray-400 dark:text-blue-300 font-medium dark:font-normal mb-4 line-clamp-1">Joël Dicker</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-5">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aspernatur provident modi
-                            optio tenetur, error assumenda vel delectus, cumque consectetur itaque veritatis nesciunt.
-                            Debitis laborum reiciendis rem nulla in sunt ipsam aliquid deleniti explicabo, vero quas
-                            quaerat, eum totam! Voluptates saepe aperiam esse hic eaque non magnam corporis r
-                        </p>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Libro 5 -->
-            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300  ">
-                <a href="#" class="flex-shrink-0">
-                    <img src="{{ asset('images/morir-no-es-tan-facil.webp') }}" alt="Portada Morir no es tan fácil"
-                        class="w-auto h-50 object-contain flex-shrink-0" />
-                </a>
-                <div class="flex flex-col justify-between p-4 w-full">
-                    <div>
-                        <h2>
-                            <a href="#"
-                                class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
-                                title="Morir no es tan fácil">Morir
-                                no es tan fácil
-                            </a>
-                        </h2>
-                        <p class="text-sm text-gray-400 dark:text-blue-300 font-medium dark:font-normal mb-4 line-clamp-1">Belinda Bauer</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-5">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aspernatur provident modi
-                            optio tenetur, error assumenda vel delectus, cumque consectetur itaque veritatis nesciunt.
-                            Debitis laborum reiciendis rem nulla in sunt ipsam aliquid deleniti explicabo, vero quas
-                            quaerat, eum totam! Voluptates saepe aperiam esse hic eaque non magnam corporis r
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <x-book-item-list imageUrl="images/la-muy-catastrofica-visita-al-zoo-joel-dicker.webp"
+                titleBook="La muy catastrófica visita al zoo" authorBook="Joël Dicker"
+                synopsis="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates." />
 
-            <!-- Libro 6 -->
-            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300  ">
-                <a href="#" class="flex-shrink-0">
-                    <img src="{{ asset('images/rebelion-en-la-granja.webp') }}" alt="Portada Rebelión en la granja"
-                        class="w-auto h-50 object-contain flex-shrink-0" />
-                </a>
-                <div class="flex flex-col justify-between p-4 w-full">
-                    <div>
-                        <h2>
-                            <a href="#"
-                                class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
-                                title="Rebelión en la granja">Rebelión
-                                en la granja
-                            </a>
-                        </h2>
-                        <p class="text-sm text-gray-400 dark:text-blue-300 font-medium dark:font-normal mb-4 line-clamp-1">George Orwell</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-5">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aspernatur provident modi
-                            optio tenetur, error assumenda vel delectus, cumque consectetur itaque veritatis nesciunt.
-                            Debitis laborum reiciendis rem nulla in sunt ipsam aliquid deleniti explicabo, vero quas
-                            quaerat, eum totam! Voluptates saepe aperiam esse hic eaque non magnam corporis r
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <x-book-item-list imageUrl="images/morir-no-es-tan-facil.webp" titleBook="Morir no es tan fácil"
+                authorBook="Belinda Bauer"
+                synopsis="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates." />
 
-            <!-- Libro 7 -->
-            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300  ">
-                <a href="#" class="flex-shrink-0">
-                    <img src="{{ asset('images/El-senor-de-los-anillos-las-dos-torres.webp') }}"
-                        alt="Portada El señor de los anillos: Las dos torres"
-                        class="w-auto h-50 object-contain flex-shrink-0" />
-                </a>
-                <div class="flex flex-col justify-between p-4 w-full">
-                    <div>
-                        <h2>
-                            <a href="#"
-                                class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
-                                title="El Señor de los Anillos: Las Dos Torres">El
-                                Señor de los Anillos: Las Dos Torres
-                            </a>
-                        </h2>
-                        <p class="text-sm text-gray-400 dark:text-blue-300 font-medium dark:font-normal mb-4 line-clamp-1">J. R. R. Tolkien</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-5">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aspernatur provident modi
-                            optio tenetur, error assumenda vel delectus, cumque consectetur itaque veritatis nesciunt.
-                            Debitis laborum reiciendis rem nulla in sunt ipsam aliquid deleniti explicabo, vero quas
-                            quaerat, eum totam! Voluptates saepe aperiam esse hic eaque non magnam corporis r
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <x-book-item-list imageUrl="images/rebelion-en-la-granja.webp" titleBook="Rebelión en la granja"
+                authorBook="George Orwell"
+                synopsis="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates." />
 
-            <!-- Libro 8 -->
-            <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300  ">
-                <a href="#" class="flex-shrink-0">
-                    <img src="{{ asset('images/el-senor-de-los-anillos-el-retorno-del-rey.webp') }}"
-                        alt="Portada El señor de los anillos: El retorno del rey"
-                        class="w-auto h-50 object-contain flex-shrink-0" />
-                </a>
-                <div class="flex flex-col justify-between p-4 w-full">
-                    <div>
-                        <h2>
-                            <a href="#"
-                                class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
-                                title="El Señor de los Anillos: El Retorno del Rey">El
-                                Señor de los Anillos: El Retorno del Rey
-                            </a>
-                        </h2>
-                        <p class="text-sm text-gray-400 dark:text-blue-300 font-medium dark:font-normal mb-4 line-clamp-1">J. R. R. Tolkien</p>
-                        <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-5">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aspernatur provident modi
-                            optio tenetur, error assumenda vel delectus, cumque consectetur itaque veritatis nesciunt.
-                            Debitis laborum reiciendis rem nulla in sunt ipsam aliquid deleniti explicabo, vero quas
-                            quaerat, eum totam! Voluptates saepe aperiam esse hic eaque non magnam corporis r
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <x-book-item-list imageUrl="images/El-senor-de-los-anillos-las-dos-torres.webp"
+                titleBook="El Señor de los Anillos: Las Dos Torres" authorBook="J. R. R. Tolkien"
+                synopsis="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates. Quibusdam, voluptatibus. Quisquam, voluptates. Repellendus, voluptatum. Quo, voluptates." />
+
+            <x-book-item-list imageUrl="images/el-senor-de-los-anillos-el-retorno-del-rey.webp"
+                titleBook="El Señor de los Anillos: El Retorno del Rey" authorBook="J. R. R. Tolkien"
+                synopsis="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolore nemo tempora harum numquam odio aperiam sit, doloribus laudantium temporibus neque! Rerum eos reprehenderit quibusdam iste a in quam id perferendis incidunt veritatis obcaecati, laborum cumque quo sed officiis mollitia ipsa rem autem provident officia! Quam ea dolore aspernatur pariatur vero illo quasi tenetur. Accusamus saepe repellat porro doloremque ab similique recusandae, laborum iste ratione sit voluptas vitae itaque ipsam et dolorem quibusdam nulla libero modi perferendis molestias cumque at commodi. Impedit laudantium omnis vel voluptatem blanditiis natus inventore aliquid nobis dolor adipisci. Quos consequuntur explicabo, asperiores ullam quae repellendus!" />
         </div>
     </div>
 </x-layout>
