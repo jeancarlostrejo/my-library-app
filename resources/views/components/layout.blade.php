@@ -94,11 +94,12 @@
         {{ $slot }}
     </main>
 
-    <footer class="w-full mb-10 py-4 z-10 text-center {{ Route::is('welcome') ? 'text-gray-200 dark:text-gray-100 ' : 'text-gray-700 dark:text-gray-100' }} text-lg  ">
+    <footer
+        class="w-full py-4 z-10 text-center {{ Route::is('welcome') ? 'text-gray-200 dark:text-gray-100 ' : 'text-gray-700 dark:text-gray-100' }} text-lg  ">
         Hecho con <span class="text-red-500 text-lg">&hearts;</span> por
         <a href="https://github.com/jeancarlostrejo" class="font-bold" target="_blank" rel="noopener noreferrer">
             Jean Carlos</a>
-            <p class="text-base">&copy; {{ now()->format('Y') }}</p>
+        <p class="text-base">&copy; {{ now()->format('Y') }}</p>
     </footer>
 
     <script>
