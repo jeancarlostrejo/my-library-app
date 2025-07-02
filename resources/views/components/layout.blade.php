@@ -50,9 +50,15 @@
                     <x-nav-link>
                         Libros leídos
                     </x-nav-link>
+
+                    <!-- button light/dark mode -->
+                    <x-toggle-theme-button id="toggle-theme" />
                 </div>
 
                 <div class="-mr-2 flex items-center md:hidden">
+                    <!-- button light/dark mode -->
+                    <x-toggle-theme-button id="toggle-theme-mobile" />
+
                     <button id="mobile-menu-button" type="button"
                         class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-200 hover:text-white hover:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
                         aria-controls="mobile-menu" aria-expanded="false">
@@ -98,7 +104,8 @@
         class="w-full py-4 z-10 text-center {{ Route::is('welcome') ? 'text-gray-200 dark:text-gray-100 ' : 'text-gray-700 dark:text-gray-100' }} text-lg  ">
         Hecho con <span class="text-red-500 text-lg">&hearts;</span> por
         <a href="https://github.com/jeancarlostrejo" class="font-bold" target="_blank" rel="noopener noreferrer">
-            Jean Carlos</a>
+            Jean Carlos
+        </a>
         <p class="text-base">&copy; {{ now()->format('Y') }}</p>
     </footer>
 
@@ -131,6 +138,37 @@
                     closeIcon.classList.add("hidden");
                 }
             });
+
+            // Toggle dark/light mode
+            function toggleThemeMode() {
+                const html = document.documentElement;
+                html.classList.toggle('dark');
+                if (html.classList.contains('dark')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            }
+
+            document.getElementById('toggle-theme')?.addEventListener('click', toggleThemeMode);
+            document.getElementById('toggle-theme-mobile')?.addEventListener('click', toggleThemeMode);
+
+            // Keep the theme consistent on page load
+            function init() {
+                const userTheme = localStorage.getItem('theme');
+                const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (userTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                } else if (userTheme === 'light') {
+                    document.documentElement.classList.remove('dark');
+                } else if (systemPrefersDark) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            }
+
+            init();
         });
     </script>
 </body>
