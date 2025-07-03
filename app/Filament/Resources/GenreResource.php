@@ -32,7 +32,7 @@ class GenreResource extends Resource
                     ->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
                 Forms\Components\TextInput::make('slug')
                     ->readOnly()
-                    ->unique()
+                    ->unique(ignoreRecord: true)
                     ->maxLength(255),
             ]);
     }
@@ -43,8 +43,7 @@ class GenreResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('slug'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
