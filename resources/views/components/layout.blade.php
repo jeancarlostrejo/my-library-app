@@ -19,6 +19,24 @@
             }
         </style>
     @endif
+    <script>
+        // Keep the theme consistent on page load
+        function init() {
+            const userTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (userTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else if (userTheme === 'light') {
+                document.documentElement.classList.remove('dark');
+            } else if (systemPrefersDark) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+
+        init();
+    </script>
     <!-- Styles / Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -43,11 +61,11 @@
                         ¿Qué libro estoy leyendo?
                     </x-nav-link>
 
-                    <x-nav-link :href="route('readings.upcoming')" :active="Route::is('readings.upcoming')">
+                    <x-nav-link :href="route('readings.upcoming')" :active="Route::is('readings.upcoming*')">
                         Próximas lecturas
                     </x-nav-link>
 
-                    <x-nav-link>
+                    <x-nav-link :href="route('readings.completed')" :active="Route::is('readings.completed*')">
                         Libros leídos
                     </x-nav-link>
 
@@ -85,11 +103,11 @@
                     ¿Qué libro estoy leyendo?
                 </x-nav-mobile-link>
 
-                <x-nav-mobile-link :href="route('readings.upcoming')" :active="Route::is('readings.upcoming')">
+                <x-nav-mobile-link :href="route('readings.upcoming')" :active="Route::is('readings.upcoming*')">
                     Próximas lecturas
                 </x-nav-mobile-link>
 
-                <x-nav-mobile-link>
+                <x-nav-mobile-link :href="route('readings.completed')" :active="Route::is('readings.completed*')">
                     Libros leídos
                 </x-nav-mobile-link>
             </div>
@@ -153,22 +171,6 @@
             document.getElementById('toggle-theme')?.addEventListener('click', toggleThemeMode);
             document.getElementById('toggle-theme-mobile')?.addEventListener('click', toggleThemeMode);
 
-            // Keep the theme consistent on page load
-            function init() {
-                const userTheme = localStorage.getItem('theme');
-                const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                if (userTheme === 'dark') {
-                    document.documentElement.classList.add('dark');
-                } else if (userTheme === 'light') {
-                    document.documentElement.classList.remove('dark');
-                } else if (systemPrefersDark) {
-                    document.documentElement.classList.add('dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                }
-            }
-
-            init();
         });
     </script>
 </body>
