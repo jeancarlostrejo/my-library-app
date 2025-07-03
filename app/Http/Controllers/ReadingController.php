@@ -22,7 +22,7 @@ class ReadingController extends Controller
     {
         $upcomingReadings = Book::with(['author', 'genres'])
             ->where('reading_status', ReadingStatus::PENDING)
-            ->paginate(1);
+            ->paginate(12);
 
         return view('readings.upcoming', compact('upcomingReadings'));
     }
@@ -32,5 +32,21 @@ class ReadingController extends Controller
         $book->load(['author', 'genres']);
 
         return view('readings.upcoming-show', compact('book'));
+    }
+
+    public function completed(): View
+    {
+        $booksCompleted = Book::with(['author', 'genres'])
+            ->where('reading_status', ReadingStatus::COMPLETED)
+            ->paginate(12);
+
+        return view('readings.completed', compact('booksCompleted'));
+    }
+
+    public function completedShow(Book $book): View
+    {
+        $book->load(['author', 'genres']);
+
+        return view('readings.completed-show', compact('book'));
     }
 }
