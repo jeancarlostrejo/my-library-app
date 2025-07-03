@@ -148,11 +148,6 @@ class BookResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('reading_status')
                     ->badge()
-                    ->colors([
-                        'gray' => ReadingStatus::PENDING->value,
-                        'info' => ReadingStatus::READING->value,
-                        'success' => ReadingStatus::COMPLETED->value,
-                    ])
                     ->sortable(),
                 Tables\Columns\TextColumn::make('published_year'),
                 Tables\Columns\TextColumn::make('created_at'),

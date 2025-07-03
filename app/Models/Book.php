@@ -12,10 +12,10 @@ class Book extends Model
 {
     protected $guarded = [];
 
-    protected function cast(): array
+    protected function casts(): array
     {
         return [
-            'started_reading_at' => 'date',
+            'started_reading_at' => 'datetime',
             'published_year' => 'integer',
             'reading_status' => ReadingStatus::class,
             'pages_read' => 'integer',
@@ -53,5 +53,15 @@ class Book extends Model
     public function author(): BelongsTo
     {
         return $this->belongsTo(Author::class);
+    }
+
+
+    public function getPorcentageReadAttribute(): string
+    {
+        if ($this->pages_read && $this->pages) {
+            return (string) round(($this->pages_read / $this->pages) * 100, 2);
+        }
+
+        return "0.0";
     }
 }
