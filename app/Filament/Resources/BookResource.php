@@ -6,6 +6,7 @@ use App\Enums\ReadingStatus;
 use App\Filament\Resources\BookResource\Pages;
 use App\Filament\Resources\BookResource\RelationManagers;
 use App\Models\Book;
+use Filament\Actions\Action;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
@@ -14,6 +15,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
+use Filament\Support\Enums\ActionSize;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -25,7 +27,7 @@ class BookResource extends Resource
 {
     protected static ?string $model = Book::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-book-open';
 
     public static function form(Form $form): Form
     {
@@ -115,13 +117,9 @@ class BookResource extends Resource
                     ->nullable(),
                 Forms\Components\Select::make('reading_status')
                     ->required()
-                    ->options(
-                        collect(ReadingStatus::cases())->mapWithKeys(function ($case) {
-                            return [$case->value => $case->label()];
-                        })->toArray()
-                    )
-                    ->default(ReadingStatus::PENDING->value)
-                    ->rule(new Enum(ReadingStatus::class)),
+                    ->enum(ReadingStatus::class)
+                    ->options(ReadingStatus::class)
+                    ->default(ReadingStatus::PENDING->value),
                 Forms\Components\TextInput::make('pages_read')
                     ->required()
                     ->numeric()
@@ -138,29 +136,82 @@ class BookResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('cover_image')
+                    ->height(100),
+
                 Tables\Columns\TextColumn::make('title')
-                    ->searchable(),
+                    ->searchable()
+                    ->url(
+                        fn($record) => match ($record->reading_status) {
+                            ReadingStatus::PENDING => route('readings.upcoming.show', $record->slug),
+                            ReadingStatus::COMPLETED => route('readings.completed.show', $record->slug),
+                            ReadingStatus::READING => route('readings.current'),
+                        }
+                    )
+                    ->limit(20)
+                    ->tooltip(fn($record) => $record->title)
+                    ->openUrlInNewTab(),
+                Tables\Columns\TextColumn::make('genres.name')
+                    ->label('Genres')
+                    ->listWithLineBreaks()
+                    ->tooltip(fn($record) => $record->genres->pluck('name')->join(', '))
+                    ->toggleable(isToggledHiddenByDefault: false),
+                Tables\Columns\TextColumn::make('pages')
+                    ->numeric()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: false),
+                Tables\Columns\TextColumn::make('pages_read')
+                    ->numeric()
+                    ->toggleable(isToggledHiddenByDefault: true),
+
                 Tables\Columns\TextColumn::make('author.name')
                     ->numeric()
+                    ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('started_reading_at')
                     ->date('d-m-Y')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('reading_status')
                     ->badge()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('published_year'),
-                Tables\Columns\TextColumn::make('created_at'),
+                    ->sortable()
+                    ->action(
+                        Tables\Actions\Action::make('changeStatus')
+                            ->label('Change Status')
+                            ->form([
+                                Forms\Components\Select::make('reading_status')
+                                    ->options(ReadingStatus::class)
+                                    ->enum(ReadingStatus::class)
+                                    ->default(fn(Book $record) => $record->reading_status)
+                                    ->required()
+                            ])
+                            ->action(function ($data, $record) {
+                                $record->update(['reading_status' => $data['reading_status']]);
+                            })
+                    ),
+                Tables\Columns\TextColumn::make('published_year')
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('reading_status')
+                    ->options(ReadingStatus::class)
+                    ->label('Reading Status'),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\DeleteAction::make(),
-
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\EditAction::make()->color('primary'),
+                    Tables\Actions\ViewAction::make()->color('info'),
+                    Tables\Actions\DeleteAction::make()
+                        ->color('danger'),
+                ])
+                    ->label('Actions')
+                    ->icon('heroicon-m-ellipsis-vertical')
+                    ->size(ActionSize::Small)
+                    ->color('primary')
+                    ->button()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

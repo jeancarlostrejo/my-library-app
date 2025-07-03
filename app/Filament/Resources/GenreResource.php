@@ -9,6 +9,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
+use Filament\Support\Enums\ActionSize;
 use Filament\Tables;
 use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Table;
@@ -20,7 +21,7 @@ class GenreResource extends Resource
 {
     protected static ?string $model = Genre::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-tag';
 
     public static function form(Form $form): Form
     {
@@ -58,9 +59,17 @@ class GenreResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                ViewAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\EditAction::make()->color('primary'),
+                    Tables\Actions\ViewAction::make()->color('info'),
+                    Tables\Actions\DeleteAction::make()
+                        ->color('danger'),
+                ])
+                    ->label('Actions')
+                    ->icon('heroicon-m-ellipsis-vertical')
+                    ->size(ActionSize::ExtraLarge)
+                    ->color('primary')
+                    ->button()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
