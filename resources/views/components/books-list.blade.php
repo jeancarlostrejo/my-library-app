@@ -1,4 +1,4 @@
-@props(['legend' => '', 'upcomingReadings'])
+@props(['legend' => '', 'books'])
 
 
 {{-- Layout for the upcoming readings page --}}
@@ -10,7 +10,7 @@
     <div
         class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-auto animate-fade-in-up animate-duration-1000 animate-delay-[800ms]">
 
-        @forelse ($upcomingReadings as  $book)
+        @forelse ($books as  $book)
             <x-book-item-list href="{{ route('readings.upcoming.show', $book) }}" imageUrl="{{ $book->cover_image }}"
                 titleBook="{{ $book->title }}" authorBook="{{ $book->author->name }}" synopsis="{{ $book->synopsis }}" />
         @empty
@@ -21,6 +21,6 @@
 
     </div>
     <div class="mt-8">
-        {{ $upcomingReadings->links() }}
+        {{ $books->links() }}
     </div>
 </div>
