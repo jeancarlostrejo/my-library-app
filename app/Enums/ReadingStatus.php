@@ -2,18 +2,21 @@
 
 namespace App\Enums;
 
-enum ReadingStatus: string
+use Filament\Support\Contracts\HasColor;
+use Filament\Support\Contracts\HasLabel;
+
+enum ReadingStatus: string 
 {
     case PENDING = 'pending';
     case READING = 'reading';
     case COMPLETED = 'completed';
 
-    public function color(): string
+    public function label(): string
     {
         return match ($this) {
-            self::PENDING => 'yellow',
-            self::READING => 'blue',
-            self::COMPLETED => 'green',
+            self::PENDING => 'Pending',
+            self::READING => 'Reading',
+            self::COMPLETED => 'Completed',
         };
     }
 }

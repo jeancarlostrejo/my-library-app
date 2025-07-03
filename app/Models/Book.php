@@ -6,6 +6,7 @@ use App\Enums\ReadingStatus;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Facades\Storage;
 
 class Book extends Model
 {
@@ -19,6 +20,29 @@ class Book extends Model
             'reading_status' => ReadingStatus::class,
             'pages_read' => 'integer',
         ];
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Automatically handle cover_image deletion when an author is deleted
+        static::deleting(function ($author) {
+            if ($author->cover_image && Storage::exists($author->cover_image)) {
+                Storage::delete($author->cover_image);
+            }
+        });
+
+        // Automatically handle cover_image deletion when an author is updated
+        static::updating(function ($author) {
+            if ($author->isDirty('cover_image')) {
+                $originalcover_image = $author->getOriginal('cover_image');
+
+                if ($originalcover_image && Storage::exists($originalcover_image)) {
+                    Storage::delete($originalcover_image);
+                }
+            }
+        });
     }
 
     public function Genres(): BelongsToMany
