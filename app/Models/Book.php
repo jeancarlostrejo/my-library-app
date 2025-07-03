@@ -59,9 +59,9 @@ class Book extends Model
     public function getPorcentageReadAttribute(): string
     {
         if ($this->pages_read && $this->pages) {
-            return (string) round(($this->pages_read / $this->pages) * 100, 2);
+            return (string) ceil(($this->pages_read / $this->pages) * 100);
         }
 
-        return "0.0";
+        return "0";
     }
 }
