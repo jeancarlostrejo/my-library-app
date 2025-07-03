@@ -35,13 +35,13 @@
                         @if ($book->reading_status === \App\Enums\ReadingStatus::READING)
                             <x-p-book-info emoji="📚" label="Estado de Lectura" value="Leyendo" />
                             <x-p-book-info emoji="🏁" label="Inicio de Lectura"
-                                value="{{ $book->started_reading_at->format('d-m-Y') }}" />
+                                value="{{ $book->started_reading_at?->format('d-m-Y') }}" />
                         @endif
 
                         @if ($book->reading_status === \App\Enums\ReadingStatus::COMPLETED)
                             <x-p-book-info emoji="✅" label="Estado de Lectura" value="Completado" />
                             <x-p-book-info emoji="🏁" label="Inicio de Lectura"
-                                value="{{ $book->started_reading_at->format('d-m-Y') }}" />
+                                value="{{ $book->started_reading_at?->format('d-m-Y') }}" />
                         @endif
 
                         @if ($book->reading_status === \App\Enums\ReadingStatus::PENDING)
