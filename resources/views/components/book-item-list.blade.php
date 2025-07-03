@@ -1,13 +1,14 @@
-@props(['imageUrl', 'titleBook', 'authorBook', 'synopsis'])
+@props(['imageUrl', 'titleBook', 'authorBook', 'synopsis', 'href' => '#'])
 
+{{-- Book item layout for the list view --}}
 <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300 ">
     <a href="#" class="flex-shrink-0">
-        <img src="{{ asset($imageUrl) }}" alt="Portada del libro" class="w-auto h-50 object-contain flex-shrink-0" />
+        <img src="{{ Storage::url($imageUrl) }}" alt="Portada del libro" class="w-auto h-50 object-contain flex-shrink-0" />
     </a>
     <div class="flex flex-col justify-between p-4 w-full">
         <div>
             <h2>
-                <a href="#"
+                <a href="{{ $href }}"
                     class="text-lg hover:underline font-medium text-gray-900 dark:text-gray-100 line-clamp-1"
                     title="{{ $titleBook }}">{{ $titleBook }}
                 </a>
