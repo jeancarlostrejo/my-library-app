@@ -31,6 +31,10 @@ class ReadingController extends Controller
     {
         $book->load(['author', 'genres']);
 
+        if ($book->reading_status !== ReadingStatus::PENDING) {
+            abort(404);
+        }
+
         return view('readings.upcoming-show', compact('book'));
     }
 
@@ -46,6 +50,10 @@ class ReadingController extends Controller
     public function completedShow(Book $book): View
     {
         $book->load(['author', 'genres']);
+
+        if ($book->reading_status !== ReadingStatus::COMPLETED) {
+            abort(404);
+        }
 
         return view('readings.completed-show', compact('book'));
     }
