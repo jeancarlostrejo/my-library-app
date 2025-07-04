@@ -20,6 +20,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules\Enum;
 use Illuminate\Support\Str;
 
@@ -137,7 +138,9 @@ class BookResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('cover_image')
-                    ->height(100),
+                    ->height(100)
+                    ->url(fn($record) => $record->cover_image ? Storage::url($record->cover_image) : null)
+                    ->openUrlInNewTab(fn($record) => $record->cover_image !== null),
 
                 Tables\Columns\TextColumn::make('title')
                     ->searchable()

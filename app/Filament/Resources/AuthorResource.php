@@ -17,6 +17,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Storage;
 
 class AuthorResource extends Resource
 {
@@ -52,7 +53,9 @@ class AuthorResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('photo')
-                    ->height(80),
+                    ->height(80)
+                    ->url(fn($record) => $record->photo ? Storage::url($record->photo) : null)
+                    ->openUrlInNewTab(fn ($record) => $record->photo !== null),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
