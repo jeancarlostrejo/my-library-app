@@ -1,5 +1,5 @@
 <x-layout>
-    <x-slot name="title">Inicio</x-slot>
+    <x-slot name="title">Mi Biblioteca | Explorar mi mundo a través de los libros que he leído</x-slot>
     <div class="fixed inset-0 bg-black/50 z-1"></div>
 
     <div class="w-full flex flex-col justify-center p-8 relative z-10 mt-16 gap-4">

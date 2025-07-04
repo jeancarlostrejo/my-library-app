@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Mi Biblioteca - {{ $title ?? 'Inicio' }} </title>
+    <title>{{ $title ?? 'Mi Biblioteca' }} </title>
 
     <link rel="shortcut icon" href="{{ asset('images/lectura.png') }}" type="image/x-icon">
 

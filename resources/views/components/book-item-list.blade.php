@@ -2,7 +2,7 @@
 
 {{-- Book item layout for the list view --}}
 <div class="bg-white dark:bg-gray-800 rounded-r-xl flex overflow-hidden hover:scale-102 duration-300 ">
-    <a href="#" class="flex-shrink-0">
+    <a href="{{ $href }}" class="flex-shrink-0">
         <img src="{{ Storage::url($imageUrl) }}" alt="Portada del libro" class="w-auto h-50 object-contain flex-shrink-0" />
     </a>
     <div class="flex flex-col justify-between p-4 w-full">
