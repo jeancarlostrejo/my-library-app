@@ -10,10 +10,10 @@ Este proyecto es un espacio personal donde comparto mis lecturas actuales, próx
 
 -   **Libro actual:** Muestra información detallada del libro que estoy leyendo en este momento, incluyendo portada, título, autor, género, progreso, la sinopsis e información acerca del autor del libro
 
--   **Próximas lecturas:** Listado de los libros con su información, los cuales leer próximamente
+-   **Próximas lecturas:** Listado de los libros con su información; libros que leeré próximamente
 
--   **Libros leídos(próximamente):** Sección donde se muestran todos los libros que he leído hasta ahora, permitiendo a los visitantes explorar mi historial de lecturas.
--   **Panel administrativo (próximamente):** Un panel de administración para gestionar los libros y autores, permitiendo agregar, editar y eliminar información de manera sencilla.
+-   **Libros leídos:** Sección donde se muestran todos los libros que he leído hasta ahora, permitiendo a los visitantes explorar mi historial de lecturas.
+-   **Panel administrativo:** Un panel de administración para gestionar los libros, autores, etiquetas, permitiendo agregar, editar y eliminar, etc.
 
 -   **Reseña de IA (próximamente)**: generación de una reseña de los libros utilizando inteligencia artificial, para ofrecer una visión más profunda de cada obra para los visitantes.
 
@@ -28,9 +28,8 @@ El proyecto busca tener funcionalidades administrativas para gestionar los libro
 -   Cargar información de nuevos libros (portada, título, autor, género, sinopsis, etc.).
 -   Guardar y actualizar los datos en la base de datos.
 -   Mostrar la información de manera dinámica y visualmente atractiva.
--  Permitir la edición y eliminación de libros y autores desde el panel administrativo.
-- Implementar una funcionalidad de reseñas generadas por IA para enriquecer la experiencia del usuario.
-
+-   Permitir la edición y eliminación de libros y autores desde el panel administrativo.
+-   Implementar una funcionalidad de reseñas generadas por IA para enriquecer la experiencia del usuario.
 
 ## Tecnologías a utilizar
 
@@ -38,44 +37,61 @@ El proyecto busca tener funcionalidades administrativas para gestionar los libro
 -   [**Tailwind CSS v4**](https://tailwindcss.com/) (estilos y utilidades responsivas)
 -   [**MySQL**](https://www.mysql.com/) (base de datos)
 -   [**FilamentPHP**](https://filamentphp.com/) (panel administrativo)
-- [**PrismPHP**](https://prismphp.com/): paquete para integracion de LLM (Large Language Models) como OpenAI, Anthropic, Gemini, DeepSeek, etc. Para generar las reseñas de los libros.
+-   [**PrismPHP**](https://prismphp.com/): paquete para integracion de LLM (Large Language Models) como OpenAI, Anthropic, Gemini, DeepSeek, etc. Para generar las reseñas de los libros.
 
 ## Instalación y uso
 
-1. Clona el repositorio:
+1. **Clona el repositorio:**
 
 ```bash
 git clone <URL_DEL_REPOSITORIO>
 cd books-app
 ```
 
-2. Instala las dependencias:
+2. **Instala las dependencias:**
 
 ```bash
 composer install
 npm install
 ```
 
-3. Configura el archivo `.env` con tus credenciales de base de datos y otras configuraciones necesarias.
+3. **Configura el archivo `.env`** con tus credenciales de base de datos y otras configuraciones necesarias, como configurar la variable de entorno en `FILESYSTEM_DISK=public`.
 
-4. Genera la clave de aplicación:
+4. **Genera la clave de aplicación:**
 
 ```bash
 php artisan key:generate
 ```
 
-5. Ejecuta las migraciones de ser necesario
+5. **Ejecuta las migraciones**
 
 ```bash
 php artisan migrate
 ```
 
-6. Levanta el servidor de desarrollo:
+6. **Crea un usuario administrador para acceder al panel de administración:**
+
+```bash
+php artisan make:filament-user
+```
+
+7.  **Crea el link simbólico para acceder a los archivos públicos:**
+
+```bash
+php artisan storage:link
+```
+
+8. **Levanta el servidor de desarrollo:**
 
 ```bash
 php artisan serve
 npm run dev
 ```
 
-7. Accede a la aplicación en tu navegador:  
-   `http://localhost:8000`
+**9. Accede a la aplicación en tu navegador:**
+
+`http://localhost:8000`
+
+10. Accede al panel de administración en:
+
+`http://localhost:8000/admin`
