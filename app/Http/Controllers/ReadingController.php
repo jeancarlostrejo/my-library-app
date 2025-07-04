@@ -41,7 +41,7 @@ class ReadingController extends Controller
     public function completed(): View
     {
         $booksCompleted = Book::with(['author', 'genres'])
-            ->where('reading_status', ReadingStatus::COMPLETED)
+            ->where('reading_status', ReadingStatus::COMPLETED)->orderBy('started_reading_at', 'desc')
             ->paginate(12);
 
         return view('readings.completed', compact('booksCompleted'));
