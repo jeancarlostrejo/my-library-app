@@ -1,0 +1,43 @@
+name: Sync on DOM Cloud
+'on':
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Invoke deployment hook
+        uses: distributhor/workflow-webhook@v2
+        env:
+          webhook_url: https://my.domcloud.co/api/githubdeploy
+          webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
+          webhook_auth: ${{ secrets.WEBHOOK_AUTH }}
+          data: >-
+            {"nginx":"server {\n    server_name www.mi-biblioteca.mnz.dom.my.id
+            mi-biblioteca.mnz.dom.my.id;\n    listen 152.53.54.225:443 ssl;\n   
+            listen [2a0a:4cc0:2000:20fc::]:443 ssl;\n    root
+            /home/mi-biblioteca/public_html/public;\n    index index.html
+            index.php;\n    access_log
+            /var/log/virtualmin/mi-biblioteca.mnz.dom.my.id_access_log;\n   
+            error_log
+            /var/log/virtualmin/mi-biblioteca.mnz.dom.my.id_error_log;\n   
+            location / {\n        try_files $uri $uri/
+            /index.php$is_args$args;\n        if ($http_referer !~
+            \"^https?://mi-biblioteca.mnz.dom.my.id\") {\n            rewrite ^
+            /deceptive.html last;\n        }\n    }\n    location ~
+            \\.[^\\/]+(?<!\\.php)$ {\n        try_files $uri =404;\n    }\n   
+            location ~ \\.php$ {\n        try_files $uri =404;\n       
+            fastcgi_pass unix:/var/php-fpm/17516767901356732.sock;\n    }\n   
+            location = /deceptive.html {\n        root
+            /usr/local/share/www;\n        internal;\n    }\n    location ^~
+            /livewire/preview-file {\n        try_files $uri $uri/
+            /index.php?$query_string;\n    }\n    location =
+            /livewire/livewire.js {\n      expires off;\n      try_files $uri
+            $uri/ /index.php?$query_string;\n    }\n    ssl_certificate
+            /etc/ssl/virtualmin/17260179234797/ssl.combined;\n   
+            ssl_certificate_key
+            /etc/ssl/virtualmin/17260179234797/ssl.key;\n}\n","commands":["git
+            pull","composer install --no-dev --optimize-autoloader","php artisan migrate --force","npm install","php artisan config:clear","php artisan route:clear","php artisan view:clear","php artisan cache:clear","php artisan config:cache", "php artisan route:cache", "php artisan view:cache","php artisan filament:clear-cached-components", "php artisan filament:optimize","restart"]}
