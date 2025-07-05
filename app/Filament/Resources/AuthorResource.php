@@ -18,6 +18,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class AuthorResource extends Resource
 {
@@ -44,6 +45,7 @@ class AuthorResource extends Resource
                     ->label('Author Photo')
                     ->image()
                     ->directory('authors')
+                    ->getUploadedFileNameForStorageUsing(fn($file) => now()->timestamp . "-" . Str::replace(' ', '-', Str::lower($file->getClientOriginalName())))
                     ->columnSpanFull(),
             ]);
     }
@@ -55,7 +57,7 @@ class AuthorResource extends Resource
                 Tables\Columns\ImageColumn::make('photo')
                     ->height(80)
                     ->url(fn($record) => $record->photo ? Storage::url($record->photo) : null)
-                    ->openUrlInNewTab(fn ($record) => $record->photo !== null),
+                    ->openUrlInNewTab(fn($record) => $record->photo !== null),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
