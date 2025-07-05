@@ -9,7 +9,8 @@ class Genre extends Model
     protected $fillable = [
         'name',
         'description',
-        'slug'
+        'slug',
+        'is_active',
     ];
 
     public function books()

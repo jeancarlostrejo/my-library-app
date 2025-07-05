@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use App\Enums\ReadingStatus;
+use Illuminate\Database\Eloquent\Attributes\Scope;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -63,5 +65,11 @@ class Book extends Model
         }
 
         return "0";
+    }
+
+    #[Scope]
+    public function active(Builder $query): void
+    {
+        $query->where('is_active', 1);
     }
 }
