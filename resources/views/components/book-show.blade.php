@@ -87,7 +87,7 @@
         <div class="grid grid-cols-1 md:grid-cols-6 gap-8">
             <figure
                 class="md:col-span-2 flex flex-col items-center md:items-start rounded-lg justify-center md:justify-start">
-                <img src="{{ Storage::url($book->author->photo) }}" alt="Foto de J. R. R. Tolkien"
+                <img src="{{ Storage::url($book->author->photo) }}" alt="Foto de {{ $book->author->name }}"
                     class="w-full max-w-xs md:max-w-md max-h-100 shadow-2xl object-contain rounded-lg animate-zoom-in animate-delay-500" />
                 <figcaption class="w-full text-center mt-2 italic">{{ $book->author->name }}</figcaption>
             </figure>
