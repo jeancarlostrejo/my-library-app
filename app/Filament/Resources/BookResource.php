@@ -232,6 +232,16 @@ class BookResource extends Resource
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\BulkAction::make('toggleIsActive')
+                        ->label('Toggle Active Status')
+                        ->icon('heroicon-o-arrow-path')
+                        ->action(function ($records) {
+                            $records->each(function ($record) {
+                                $record->update(['is_active' => !$record->is_active]);
+                            });
+                        })
+                        ->requiresConfirmation()
+                        ->color('warning'),
                 ]),
             ]);
     }
