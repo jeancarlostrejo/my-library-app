@@ -36,6 +36,10 @@ class GenreResource extends Resource
                     ->readOnly()
                     ->unique(ignoreRecord: true)
                     ->maxLength(255),
+                Forms\Components\Toggle::make('is_active')
+                    ->label('Is Active')
+                    ->default(false),
+
             ]);
     }
 
@@ -46,6 +50,10 @@ class GenreResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug'),
+                Tables\Columns\ToggleColumn::make('is_active')
+                    ->label('Active')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

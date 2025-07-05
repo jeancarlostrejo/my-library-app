@@ -47,6 +47,9 @@ class AuthorResource extends Resource
                     ->directory('authors')
                     ->getUploadedFileNameForStorageUsing(fn($file) => now()->timestamp . "-" . Str::replace(' ', '-', Str::lower($file->getClientOriginalName())))
                     ->columnSpanFull(),
+                Forms\Components\Toggle::make('is_active')
+                    ->label('Is Active')
+                    ->default(false)
             ]);
     }
 
@@ -60,6 +63,10 @@ class AuthorResource extends Resource
                     ->openUrlInNewTab(fn($record) => $record->photo !== null),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
+                Tables\Columns\ToggleColumn::make('is_active')
+                    ->label('Active')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

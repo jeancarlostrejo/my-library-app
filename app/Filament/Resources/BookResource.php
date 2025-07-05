@@ -129,7 +129,10 @@ class BookResource extends Resource
                 Forms\Components\TextInput::make('published_year')
                     ->nullable()
                     ->numeric()
-                    ->maxValue(now()->year)
+                    ->maxValue(now()->year),
+                Forms\Components\Toggle::make('is_active')
+                    ->label('Is Active')
+                    ->default(false)
             ]);
     }
 
@@ -191,6 +194,10 @@ class BookResource extends Resource
                                 $record->update(['reading_status' => $data['reading_status']]);
                             })
                     ),
+                Tables\Columns\ToggleColumn::make('is_active')
+                    ->label('Active')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: false),
                 Tables\Columns\TextColumn::make('published_year')
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('created_at')
@@ -202,6 +209,12 @@ class BookResource extends Resource
                 Tables\Filters\SelectFilter::make('reading_status')
                     ->options(ReadingStatus::class)
                     ->label('Reading Status'),
+                Tables\Filters\SelectFilter::make('is_active')
+                    ->options([
+                        '1' => 'Active',
+                        '0' => 'Inactive',
+                    ])
+                    ->label('Active Status'),
             ])
             ->actions([
                 Tables\Actions\ActionGroup::make([

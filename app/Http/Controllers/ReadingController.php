@@ -12,6 +12,7 @@ class ReadingController extends Controller
     public function current(): View
     {
         $book = Book::with(['author', 'genres'])
+            ->active()
             ->where('reading_status', ReadingStatus::READING)
             ->first();
 
@@ -21,6 +22,7 @@ class ReadingController extends Controller
     public function upcoming(): View
     {
         $upcomingReadings = Book::with(['author', 'genres'])
+            ->active()
             ->where('reading_status', ReadingStatus::PENDING)
             ->paginate(12);
 
@@ -31,7 +33,7 @@ class ReadingController extends Controller
     {
         $book->load(['author', 'genres']);
 
-        if ($book->reading_status !== ReadingStatus::PENDING) {
+        if ($book->reading_status !== ReadingStatus::PENDING || !$book->is_active) {
             abort(404);
         }
 
@@ -41,6 +43,7 @@ class ReadingController extends Controller
     public function completed(): View
     {
         $booksCompleted = Book::with(['author', 'genres'])
+            ->active()
             ->where('reading_status', ReadingStatus::COMPLETED)->orderBy('started_reading_at', 'desc')
             ->paginate(12);
 
@@ -51,7 +54,7 @@ class ReadingController extends Controller
     {
         $book->load(['author', 'genres']);
 
-        if ($book->reading_status !== ReadingStatus::COMPLETED) {
+        if ($book->reading_status !== ReadingStatus::COMPLETED || !$book->is_active) {
             abort(404);
         }
 
