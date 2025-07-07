@@ -37,7 +37,7 @@ class AuthorResource extends Resource
                 Textarea::make('description')
                     ->nullable()
                     ->autosize()
-                    ->maxLength(5000)
+                    ->maxLength(10000)
                     ->columnSpanFull()
                     ->rows(10),
                 FileUpload::make('photo')
@@ -45,6 +45,7 @@ class AuthorResource extends Resource
                     ->label('Author Photo')
                     ->image()
                     ->directory('authors')
+                    ->maxSize(1024)
                     ->getUploadedFileNameForStorageUsing(fn($file) => now()->timestamp . "-" . Str::replace(' ', '-', Str::lower($file->getClientOriginalName())))
                     ->columnSpanFull(),
                 Forms\Components\Toggle::make('is_active')

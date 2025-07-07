@@ -13,6 +13,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Support\Enums\ActionSize;
@@ -92,7 +93,7 @@ class BookResource extends Resource
                         Textarea::make('description')
                             ->nullable()
                             ->autosize()
-                            ->maxLength(5000)
+                            ->maxLength(10000)
                             ->columnSpanFull()
                             ->rows(10),
                         FileUpload::make('photo')
@@ -105,11 +106,13 @@ class BookResource extends Resource
                 Forms\Components\Textarea::make('synopsis')
                     ->required()
                     ->rows(6)
+                    ->maxLength(10000)
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('cover_image')
                     ->required()
                     ->directory('books')
-                    ->image(),
+                    ->image()
+                    ->maxSize(1024),
                 Forms\Components\TextInput::make('pages')
                     ->required()
                     ->numeric()
@@ -120,16 +123,25 @@ class BookResource extends Resource
                     ->required()
                     ->enum(ReadingStatus::class)
                     ->options(ReadingStatus::class)
-                    ->default(ReadingStatus::PENDING->value),
+                    ->default(ReadingStatus::PENDING->value)
+                    ->reactive()
+                    ->afterStateUpdated(function (Set $set, $state, Get $get) {
+                        $pages = $get('pages');
+
+                        if ($state === ReadingStatus::COMPLETED->value && $pages > 0) {
+                            $set('pages_read', $get('pages'));
+                        }
+                    }),
                 Forms\Components\TextInput::make('pages_read')
                     ->required()
                     ->numeric()
                     ->minValue(0)
+                    ->rules(fn(Get $get)=> ['lte:' . $get('pages')])
                     ->default(0),
                 Forms\Components\TextInput::make('published_year')
                     ->nullable()
                     ->numeric()
-                    ->maxValue(now()->year),
+                    ->maxValue(now()->addYear()->year),
                 Forms\Components\Toggle::make('is_active')
                     ->label('Is Active')
                     ->default(false)
