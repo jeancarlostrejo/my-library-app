@@ -141,6 +141,7 @@ class BookResource extends Resource
                 Forms\Components\TextInput::make('published_year')
                     ->nullable()
                     ->numeric()
+                    ->minValue(-3000)
                     ->maxValue(now()->addYear()->year),
                 Forms\Components\Toggle::make('is_active')
                     ->label('Is Active')
