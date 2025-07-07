@@ -63,7 +63,8 @@ class AuthorResource extends Resource
                     ->url(fn($record) => $record->photo ? Storage::url($record->photo) : null)
                     ->openUrlInNewTab(fn($record) => $record->photo !== null),
                 Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\ToggleColumn::make('is_active')
                     ->label('Active')
                     ->sortable()
