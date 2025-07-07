@@ -136,7 +136,7 @@ class BookResource extends Resource
                     ->required()
                     ->numeric()
                     ->minValue(0)
-                    ->rules(fn(Get $get)=> ['lte:' . $get('pages')])
+                    ->rules(fn(Get $get) => ['lte:' . $get('pages')])
                     ->default(0),
                 Forms\Components\TextInput::make('published_year')
                     ->nullable()
@@ -155,7 +155,8 @@ class BookResource extends Resource
                 Tables\Columns\ImageColumn::make('cover_image')
                     ->height(100)
                     ->url(fn($record) => $record->cover_image ? Storage::url($record->cover_image) : null)
-                    ->openUrlInNewTab(fn($record) => $record->cover_image !== null),
+                    ->openUrlInNewTab(fn($record) => $record->cover_image !== null)
+                    ->toggleable(isToggledHiddenByDefault: true),
 
                 Tables\Columns\TextColumn::make('title')
                     ->searchable()
@@ -185,13 +186,16 @@ class BookResource extends Resource
                 Tables\Columns\TextColumn::make('author.name')
                     ->numeric()
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: false),
                 Tables\Columns\TextColumn::make('started_reading_at')
                     ->date('d-m-Y')
-                    ->sortable(),
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: false),
                 Tables\Columns\TextColumn::make('reading_status')
                     ->badge()
                     ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: false)
                     ->action(
                         Tables\Actions\Action::make('changeStatus')
                             ->label('Change Status')
@@ -206,16 +210,16 @@ class BookResource extends Resource
                                 $record->update(['reading_status' => $data['reading_status']]);
                             })
                     ),
-                Tables\Columns\ToggleColumn::make('is_active')
-                    ->label('Active')
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: false),
                 Tables\Columns\TextColumn::make('published_year')
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('created_at')
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\ToggleColumn::make('is_active')
+                    ->label('Active')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: false),
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('reading_status')
