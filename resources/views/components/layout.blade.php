@@ -42,7 +42,7 @@
 </head>
 
 <body
-    class="flex flex-col items-center min-h-screen bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans {{ Route::is('welcome') ? 'fondo' : '' }} {{ Route::is('readings.current') ? ' mx-4' : '' }}">
+    class="flex flex-col items-center min-h-screen bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans {{ Route::is('welcome') ? 'fondo' : '' }} {{ Route::is('readings.current') || Route::is('readings.*.show') ? ' mx-4' : '' }} ">
 
     <nav class="bg-gray-100 dark:bg-gray-800 shadow-md w-full fixed top-0 inset-x-0 z-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
