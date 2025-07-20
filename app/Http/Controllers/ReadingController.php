@@ -21,12 +21,7 @@ class ReadingController extends Controller
 
     public function upcoming(): View
     {
-        $upcomingReadings = Book::with(['author', 'genres'])
-            ->active()
-            ->where('reading_status', ReadingStatus::PENDING)
-            ->paginate(12);
-
-        return view('readings.upcoming', compact('upcomingReadings'));
+        return view('readings.upcoming');
     }
 
     public function upcomingShow(Book $book): View
@@ -42,12 +37,7 @@ class ReadingController extends Controller
 
     public function completed(): View
     {
-        $booksCompleted = Book::with(['author', 'genres'])
-            ->active()
-            ->where('reading_status', ReadingStatus::COMPLETED)->orderBy('started_reading_at', 'desc')
-            ->paginate(12);
-
-        return view('readings.completed', compact('booksCompleted'));
+        return view('readings.completed');
     }
 
     public function completedShow(Book $book): View
