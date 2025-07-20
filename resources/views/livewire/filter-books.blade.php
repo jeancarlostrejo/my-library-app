@@ -19,7 +19,7 @@
 
                 <div class="lg:px-0">
                     <input type="submit"
-                        class="bg-blue-600 hover:bg-blue-700 transition-colors text-white text-sm font-bold px-10 py-2 rounded cursor-pointer uppercase w-full md:w-auto p-2"
+                        class="bg-blue-600 hover:bg-blue-700 transition-colors text-white text-sm font-bold px-10 py-2 rounded cursor-pointer uppercase w-full md:max-w-48 p-2"
                         value="Buscar" />
                 </div>
             </div>
