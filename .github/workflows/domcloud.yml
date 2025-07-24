@@ -40,4 +40,4 @@ jobs:
             /etc/ssl/virtualmin/17260179234797/ssl.combined;\n   
             ssl_certificate_key
             /etc/ssl/virtualmin/17260179234797/ssl.key;\n}\n","commands":["git reset --hard HEAD","git
-            pull","composer install --no-dev --optimize-autoloader","php artisan migrate --force","npm install","php artisan config:clear","php artisan route:clear","php artisan view:clear","php artisan cache:clear","php artisan config:cache", "php artisan route:cache", "php artisan view:cache","php artisan filament:clear-cached-components", "php artisan filament:optimize","restart"]}
+            pull","composer install --no-dev --optimize-autoloader","php artisan migrate --force","npm install","npm run build","php artisan config:clear","php artisan route:clear","php artisan view:clear","php artisan cache:clear","php artisan config:cache", "php artisan route:cache", "php artisan view:cache","php artisan filament:clear-cached-components", "php artisan filament:optimize","restart"]}
