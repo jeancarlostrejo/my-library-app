@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\AuthorResource\Pages;
 use App\Filament\Resources\AuthorResource\RelationManagers;
+use App\Filament\Resources\AuthorResource\RelationManagers\BooksRelationManager;
 use App\Models\Author;
 use Filament\Actions\ViewAction;
 use Filament\Forms;
@@ -104,7 +105,7 @@ class AuthorResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            BooksRelationManager::class
         ];
     }
 
