@@ -66,7 +66,12 @@ class GenreResource extends Resource
             ])
             ->defaultSort('name', 'asc')
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('is_active')
+                    ->options([
+                        '1' => 'Active',
+                        '0' => 'Inactive',
+                    ])
+                    ->label('Active Status'),
             ])
             ->actions([
                 Tables\Actions\ActionGroup::make([
