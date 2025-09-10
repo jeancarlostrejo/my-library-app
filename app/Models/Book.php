@@ -72,4 +72,9 @@ class Book extends Model
     {
         $query->where('is_active', 1);
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }
