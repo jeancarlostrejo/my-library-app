@@ -55,7 +55,7 @@ composer install
 npm install
 ```
 
-3. **Configura el archivo `.env`** con tus credenciales de base de datos y otras configuraciones necesarias, como configurar la variable de entorno en `FILESYSTEM_DISK=public`.
+3. **Configura el archivo `.env`**: haz una copia del archivo `.env.example` y renombrala a `.env` y cambia los valores de las variables de entorno (credenciales de base de datos, `FILESYSTEM_DISK=public`, etc).
 
 4. **Genera la clave de aplicación:**
 
