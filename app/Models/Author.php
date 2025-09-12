@@ -27,7 +27,7 @@ class Author extends Model
             }
         });
 
-        // Automatically handle photo deletion when an author is updated
+        // Automatically handle photo when an author is updated
         static::updating(function ($author) {
             if ($author->isDirty('photo')) {
                 $originalPhoto = $author->getOriginal('photo');

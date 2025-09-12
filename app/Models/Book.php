@@ -28,17 +28,17 @@ class Book extends Model
     {
         parent::boot();
 
-        // Automatically handle cover_image deletion when an author is deleted
-        static::deleting(function ($author) {
-            if ($author->cover_image && Storage::exists($author->cover_image)) {
-                Storage::delete($author->cover_image);
+        // Automatically handle cover_image deletion when a book is deleted
+        static::deleting(function ($book) {
+            if ($book->cover_image && Storage::exists($book->cover_image)) {
+                Storage::delete($book->cover_image);
             }
         });
 
-        // Automatically handle cover_image deletion when an author is updated
-        static::updating(function ($author) {
-            if ($author->isDirty('cover_image')) {
-                $originalcover_image = $author->getOriginal('cover_image');
+        // Automatically handle cover_image when a book is updated
+        static::updating(function ($book) {
+            if ($book->isDirty('cover_image')) {
+                $originalcover_image = $book->getOriginal('cover_image');
 
                 if ($originalcover_image && Storage::exists($originalcover_image)) {
                     Storage::delete($originalcover_image);
