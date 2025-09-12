@@ -62,6 +62,7 @@ class BookResource extends Resource
                             ->unique(ignoreRecord: true)
                             ->maxLength(255)
                     ])
+                    ->required()
                     ->multiple(),
                 Forms\Components\Select::make('author_id')
                     ->required()
@@ -139,7 +140,7 @@ class BookResource extends Resource
                     ->rules(fn(Get $get) => ['lte:' . $get('pages')])
                     ->default(0),
                 Forms\Components\TextInput::make('published_year')
-                    ->nullable()
+                    ->required()
                     ->numeric()
                     ->minValue(-3000)
                     ->maxValue(now()->addYear()->year),
